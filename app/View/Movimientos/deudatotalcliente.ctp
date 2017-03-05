@@ -1,0 +1,1 @@
+<?php echo $this->Number->precision($total,2) ?>

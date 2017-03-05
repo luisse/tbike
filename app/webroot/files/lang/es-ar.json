@@ -1,0 +1,18 @@
+{
+    "lang": {
+        "alreadyInCart": "\"{{name}}\" se encuentra en el carro. Selecciona el ícono del Carro para ver los productos a comprar.",
+        "itemAddedToCart": "Item Agregado al Carro. Selecciona el ícono del Carro para ver los productos a comprar.",
+        "itemRemovedFromCart": "Item Borrado del Carro.  Selecciona el ícono del Carro para ver los productos a comprar.",
+        "labelAddToCart": "Agregar al Carro",
+        "labelAddedToCart": "Agregado al Carro",
+        "labelRemoveFromCart": "Remover del Carro",
+        "labelChangeQuantity": "Usa los botones con flechas para cambiar las cantidades",
+        "labelUpdateCart": "Carro Actualizado",
+        "labelGoToCheckout": "Salir",
+        "labelItemSingular": "item",
+        "labelItemPlural": "items",
+        "labelUnitPrice": "Precio Unitatio",
+        "contactingPaymentProvider": "Contactando {{paymentProvider}}. Por favor espere u recargue la página.",
+        "cookiesAreDisabled": "Las cookies en tu navegador debes habilitarlas para poder ver esta opción."
+    }
+}

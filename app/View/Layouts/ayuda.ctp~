@@ -1,0 +1,85 @@
+<?= $this->element("header");?>
+<!-- Slider Section -->
+<section class="slider-help" id="slider-part">
+   <div class="slider-wrap slider-wrap-help">
+       <div class="texture-overlay"></div>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-2">
+                   <div class="slider-img pull-right hidden-xs">
+
+                   </div>
+               </div>
+               <div class="col-md-10">
+                   <div class="slider-content ">
+                       <h1 class="top-mobile"></h1>
+
+                   </div>
+               </div>
+           </div>
+       </div> <!-- row end  -->
+   </div> <!-- Container end  -->
+</section>
+<!-- Slider Section end -->
+
+<!-- Section Features start -->
+<section id="feature">
+<a name="help" id="help"></a>
+<div class="container">
+ <div class="row">
+
+     <div class="heading-inner text-center">
+
+       <h1 class="sec-title">Preguntas <strong>Frecuentes</strong></h1>
+
+       </div>
+                   <div class="row">
+               <div class="col-md-12 col-sm-6">
+                   <div class="item-wrapper">
+                       <ul class="item-list-left">
+                           <li class="wow fadeInDown" data-wow-delay=".3s">
+                                <i class="icon icon-pencil"></i>
+                                <div class="item-content">
+                                   <h3>Qué es taxiar.com.ar?</h3>
+                                   <p>taxiar.com.ar es un nuevo sistema para pedir y tomar un taxi que rediseña la experiencia de tu viaje.
+</p>
+                               </div>
+                           </li>
+                           <li class="wow fadeInDown" data-wow-delay=".6s">
+                               <i class="icon icon-pencil"></i>
+                               <div class="item-content">
+                                   <h3>Cómo solicito un Vehículo?</h3>
+                                   <p>Descargando nuestra app gratis y con solo un click podes desde solicitar un vehículo para este mismo momento hasta organizar viajes adelantadamente.</p>
+                               </div>
+                           </li>
+                           <li class="wow fadeInDown" data-wow-delay=".9s">
+                               <i class="icon icon-pencil"></i>
+                               <div class="item-content">
+                                   <h3>Tengo elección de Características?</h3>
+                                   <p>Porque todos tenemos requerimientos diferentes, taxiseguro.com.ar te dá la oportunidad de elegir las características del vehículo y hacer pedidos al conductor haciendo tus viajes en taxi más cómodos y placenteros.</p>
+                               </div>
+                           </li>
+                           <li class="wow fadeInDown" data-wow-delay=".9s">
+                               <i class="icon icon-pencil"></i>
+                               <div class="item-content">
+                                   <h3>Qué tipo de Herramientas tengo?</h3>
+                                   <p>taxiseguro.com.ar cuenta con una serie de herramientas que maximizan tu seguridad y la del taxista, permitiendote moverte en la ciudad tranquilamente.</p>
+
+                               </div>
+                           </li>
+                       </ul>
+                    </div>
+               </div> <!-- col-md-6 end -->
+
+           </div><!-- row end -->
+ </div>
+</div>
+
+</section>
+<!-- Section Features end -->
+
+               <div align="center" class="bg-slogan">
+                   <h2 class="sec-slogan"><strong>Rediseñando la experiencia</strong> de viajar en taxi!</h2>
+
+               </div>
+<?= $this->element("footer");?>

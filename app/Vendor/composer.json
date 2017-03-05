@@ -1,0 +1,8 @@
+{
+    "require": {
+        "lcobucci/jwt": "^3.0",
+        "ktamas77/firebase-php": "dev-master",
+        "eelkevdbos/firebase-php": "dev-master",
+        "matthiasmullie/minify": "^1.3"
+    }
+}

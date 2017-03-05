@@ -1,0 +1,126 @@
+﻿SELECT Taxturn.taxownerscar_id,Taxubication.id
+FROM rsesions
+LEFT JOIN userpeoples Userpeople ON (Userpeople.user_id = rsesions.user_id)
+LEFT JOIN taxownerdrivers Taxownerdriver ON(Taxownerdriver.people_id = Userpeople.people_id)
+LEFT JOIN taxturns Taxturn ON( Taxturn.taxownerdriver_id = Taxownerdriver.id and Taxturn.state = 1)
+LEFT JOIN taxubications Taxubication ON( Taxubication.taxownerscar_id = Taxturn.taxownerscar_id)
+WHERE rsesions.state = 1 AND sessionkey = '4c212848fea0f7bfd55d12c8a3a15cda474f3f2a'
+
+DELETE FROM taxubications WHERE id >= 42
+SELECT * FROM taxubications
+
+SELECT * FROM rsesions ORDER BY id DESC LIMIT 10
+SELECT * FROM users WHERE id = 258
+
+SELECT * FROM taxubications WHERE taxownerscar_id = 65
+DELETE FROM taxubications WHERE id = 19
+/*CREATE INDEX index_rsesion_sessionkey
+  ON public.rsesions
+  USING btree
+  (sessionkey);**/
+SELECT * FROM groups
+SELECT * FROM taxorders ORDER BY id DESC LIMIT 10
+SELECT * FROM logstates ORDER BY ID DESC LIMIT 10
+SELECT * FROM taxturns
+-- CANDELA REMISERIA
+SELECT * FROM sp_cancel_order('2c98a883dd5437dd3826a25bf8ec83f437c718a3',1756,2)
+-- TAXISTA CANCELA
+SELECT * FROM sp_cancel_order('4c212848fea0f7bfd55d12c8a3a15cda474f3f2a',0,3)
+
+DROP FUNCTION public.sp_cancel_order( character varying, integer, integer);
+
+CREATE OR REPLACE FUNCTION public.sp_cancel_order(IN p_sessionkey character varying, p_order_id integer, p_state integer)
+  RETURNS TABLE(taxorder_id integer, taxturn_id integer, taxorder_lat float, taxorder_lng float, taxownerscar_id integer, sessionkey character varying) AS
+$BODY$
+DECLARE
+li_user_id rsesions.user_id%TYPE;
+li_group_id users.group_id%TYPE;
+li_taxorder_id taxorders.id%TYPE;
+li_taxturn_id taxorders.taxturn_id%TYPE;
+li_taxownerscar_id taxownerscars.id%TYPE;
+ll_taxorder_lat float;
+ll_taxorder_lng float;
+ls_sessionkey_driver character varying;
+
+i_id INT;
+BEGIN
+    SELECT rsesions.user_id,
+	    group_id INTO li_user_id,li_group_id
+    FROM rsesions
+    LEFT JOIN users ON (users.id = rsesions.user_id)
+    WHERE rsesions.state = 1 and 
+	  rsesions.sessionkey = p_sessionkey;
+
+    IF li_user_id IS NULL OR li_group_id IS NULL THEN
+	RETURN;
+    END IF;
+    --SI no es chofer buscamos orden por el usuario recuperado
+    RAISE NOTICE 'El Driver es (%)', li_group_id;
+    IF li_group_id not in(1,2) THEN
+	    SELECT 
+		taxorders.id,taxorders.taxturn_id,ST_X(taxorders.gpspoint),ST_Y(taxorders.gpspoint) INTO
+		li_taxorder_id,li_taxturn_id,ll_taxorder_lat,ll_taxorder_lng
+	    FROM 
+		taxorders
+	    WHERE user_id = li_user_id 
+		AND state in(0,1) 
+		AND (taxorders.id = p_order_id OR p_order_id = 0)
+		AND date_part('minutes',current_timestamp - taxorders.date) < 60 
+		AND date_part('hours',current_timestamp - taxorders.date) = 0
+		AND date_part('month',current_timestamp) = date_part('month',taxorders.date)
+		AND date_part('year',current_timestamp) = date_part('year',taxorders.date)
+		AND date_part('day',current_timestamp) = date_part('day',taxorders.date)
+	    ORDER BY id DESC
+	    LIMIT 1;
+	    
+	    --Recuperar key del taxista si existels_sessionkey_driver
+	    IF li_taxturn_id <> NULL THEN
+		SELECT  rsesions.sessionkey,taxturns.taxornerscar_id INTO ls_sessionkey_driver,li_taxownerscar_id
+		FROM
+		taxturns
+		INNER JOIN taxownersdrivers ON(taxownersdrivers.id = taxturns.taxownerdriver_id) 
+		INNER JOIN rsesions ON(rsesions.user_id = taxownersdrivers.user_id and rsesions.state = 1)
+		WHERE taxturns.state = 1;
+	    END IF;
+	ELSE
+	    -- Recuperamos orden por taxista
+	    RAISE NOTICE 'Recuperando orden por fork de taxista (%)', li_user_id;	
+	    SELECT 
+		taxorders.id,taxorders.taxturn_id,ST_X(taxorders.gpspoint),ST_Y(taxorders.gpspoint),rsesions.sessionkey,taxturns.taxownerscar_id INTO
+		li_taxorder_id,li_taxturn_id,ll_taxorder_lat,ll_taxorder_lng,ls_sessionkey_driver,li_taxownerscar_id
+	    FROM
+		taxownerdrivers 
+	    LEFT JOIN taxturns ON (taxturns.taxownerdriver_id = taxownerdrivers.id)
+	    LEFT JOIN taxorders ON (taxorders.taxturn_id = taxturns.id)
+	    LEFT JOIN rsesions ON(rsesions.user_id = taxownerdrivers.user_id AND rsesions.state = 1)
+	    WHERE taxownerdrivers.user_id = li_user_id 
+		AND taxturns.state =1 
+		AND (taxorders.id = p_order_id OR p_order_id = 0)
+		AND date_part('minutes',current_timestamp - taxorders.date) < 60 
+		AND date_part('hours',current_timestamp - taxorders.date) = 0
+		AND date_part('month',current_timestamp) = date_part('month',taxorders.date)
+		AND date_part('year',current_timestamp) = date_part('year',taxorders.date)
+		AND date_part('day',current_timestamp) = date_part('day',taxorders.date)
+	    ORDER BY id DESC
+	    LIMIT 1;	
+	END IF;
+
+    RAISE NOTICE 'Actualizando orden (%)', li_taxorder_id;	
+
+
+    UPDATE 
+	    taxorders
+    SET state = p_state 
+    WHERE taxorders.id = li_taxorder_id;
+
+    
+    RETURN QUERY
+	SELECT li_taxorder_id,li_taxturn_id,ll_taxorder_lat,ll_taxorder_lng,li_taxownerscar_id,ls_sessionkey_driver;	
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+  COST 100
+  ROWS 1000;
+ALTER FUNCTION public.sp_cancel_order( character varying, integer, integer)
+  OWNER TO postgres;
+

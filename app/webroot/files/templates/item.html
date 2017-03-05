@@ -1,0 +1,58 @@
+<li data-bind='{"index":"{{i}}"}' class="acidjs-shopping-cart-item item-{{uuid}}" data-id="{{uuid}}">
+    <div class="acidjs-shopping-cart-item-inner-wrapper">
+        <div class="acidjs-shopping-cart-item-display">
+            <div class="acidjs-shopping-cart-dropdown-controls">
+                <ul>
+                    <li>
+                        <button name="remove-from-cart" title="{{labelRemoveFromCart}}"><span><!-- / --></span></button>
+                    </li>
+                </ul>
+            </div><div class="acidjs-shopping-cart-thumb">
+                <p>{{description}}</p>
+                <div class="acidjs-shopping-cart-item-added-tick">
+                    <div><!-- / --></div>
+                </div>
+                <div class="acidjs-shopping-cart-item-details">
+                    <h3 class="acidjs-float-left">
+                        <span class="acidjs-shopping-cart-item-name"><a href="{{url}}" target="_blank" title="{{name}}">{{name}}</a></span></h3>
+                    </h3>
+                    <button name="add-to-cart" class="acidjs-float-right" title="{{labelAddToCart}}" title="{{labelAddToCart}}"><!-- / --></button>
+                </div>
+            </div>
+        </div>
+        <div class="acidjs-shopping-cart-item-controls">
+            <div class="acidjs-float-left">
+                <em title="{{labelUnitPrice}}"><span>{{currency_symbol}}</span><b>{{price}}</b> <span>{{currency_code}}</em></span>
+            </div>
+            <div class="acidjs-float-right">
+                <input data-type="number" type="number" min="1" {{readonly}} title="{{labelChangeQuantity}}" data-cart-default-quantity="{{quantity}}" value="{{quantity}}" step="1" {{allowChangeQuantity}} name="quantity" />
+            </div>
+        </div>
+    </div>
+    <style>
+    /* item-specific styles */
+    .acidjs-shopping-cart-items .item-{{uuid}} .acidjs-shopping-cart-item-inner-wrapper,
+    .acidjs-shopping-cart-items .item-{{uuid}} .acidjs-shopping-cart-item-details,
+    .acidjs-shopping-cart-items .item-{{uuid}} .acidjs-shopping-cart-item-added-tick
+    {
+        background-color: {{color}};
+    }
+    
+    .acidjs-shopping-cart-items .item-{{uuid}} .acidjs-shopping-cart-thumb
+    {
+        width: {{width}}px;
+        height: {{height}}px;
+    }
+    
+    .acidjs-shopping-cart-items .item-{{uuid}} .acidjs-shopping-cart-thumb
+    {
+        background-image: url('{{thumb}}');
+        border-color: {{color}};
+    }
+    
+    .acidjs-shopping-cart .item-{{uuid}} .acidjs-shopping-cart-item-details h3
+    {
+        max-width: {{titleWidth}}px;
+    }
+    </style>
+</li>

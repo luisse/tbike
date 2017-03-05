@@ -1,0 +1,132 @@
+<?= $this->element("header");?>
+<!-- Slider Section -->
+<section class="slider-passenger" id="slider-part">
+   <div class="slider-wrap">
+       <div class="texture-overlay"></div>
+       <div class="container">
+           <div class="row">
+               <div class="col-md-2">
+                   <div class="slider-img pull-right hidden-xs">
+
+                   </div>
+               </div>
+               <div class="col-md-10">
+                   <div class="slider-content ">
+                       <h1 class="top-mobile">VIAJA <strong>FACIL Y SEGURO</strong></h1>
+
+                       <ul class="top-link-content list-inline">
+                           <li><a class="page-scroll" href="#features">VER MÁS</a></li>
+
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </div> <!-- row end  -->
+   </div> <!-- Container end  -->
+   <a name="features" id="features"></a>
+</section>
+<!-- Slider Section end -->
+
+<!-- Section Features start -->
+<section id="feature">
+
+   <div class="container">
+       <div class="row">
+           <div class="heading-inner text-center">
+               <h2 class="sec-title">Pasajero</h2>
+               <p></p>
+           </div>
+       </div> <!-- Heading row end -->
+       <div class="row">
+           <div class="col-md-4 col-sm-6">
+                   <div class="item-left-list">
+                       <div class="row">
+
+
+                               <div class="item-content-icons">
+                                   <ul>
+                                       <li class="wow fadeInDown pad-rg10" data-wow-delay=".3s">
+                                           <i class="icon icon-clock"></i>
+                                           <h4>Clikeá y pedí un taxi en solo segundos</h4>
+
+                                       </li>
+                                       <li class="wow fadeInDown pad-rg40" data-wow-delay=".6s">
+                                           <i class="icon icon-profile-male"></i>
+                                           <h4>Conoce al taxista y su vehículo <!-- antes de que llegue --></h4>
+
+                                       </li>
+                                       <li class="wow fadeInDown pad-rg40-mobile" data-wow-delay=".9s">
+                                           <i class="icon icon-shield"></i>
+                                           <h4>Relájate, tu recorrido es más seguro</h4>
+
+                                       </li>
+
+                                   </ul>
+                               </div>
+
+                       </div>
+                   </div>
+            </div>
+
+           <div class="col-md-4 col-xs-4 visible-md visible-lg wow fadeInDown" alt="taxiseguro.com.ar" class="img-responsive" align="center">
+               <!-- <img src="https://taxiar-files.s3.amazonaws.com/img/landpage/sec-img/img3.png" alt="taxiseguro.com.ar" class="img-responsive"> -->
+               <div class="col-md-12">
+                   <div class="col-md-2"></div>
+                   <div class="col-md-8" align="center" style="padding-top: 310px;"><a href="https://play.google.com/store/apps/details?id=uno.tacho.user" target="_blank"><img src="https://taxiar-files.s3.amazonaws.com/img/landpage/sec-img/btn-google-play.png" alt="Google Play"></a></div>
+                   <div class="col-md-2"></div>
+               </div>
+               <div class="col-md-12">
+                   <div class="col-md-2"></div>
+                   <div class="col-md-8" align="center" style="padding-top: 5px;"><a href="https://itunes.apple.com/us/app/Taxi-Seguro/id1111218966"><img src="https://taxiar-files.s3.amazonaws.com/img/landpage/sec-img/btn-apple-store.png" alt="Apple Store"></a></div>
+               <div class="col-md-2"></div>
+               </div>
+           </div>
+
+               <div class="col-md-4 col-sm-6">
+                   <div class="item-right-list">
+                       <div class="row">
+
+
+                               <div class="item-content">
+                                   <ul>
+                                       <li class="wow fadeInDown" data-wow-delay=".3s">
+                                           <i class="icon icon-adjustments"></i><p></p>
+                                           <h4>Elegí como querés viajar&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>
+
+                                       </li>
+                                       <li class="wow fadeInDown" data-wow-delay=".6s">
+                                           <i class="icon icon-download"></i>
+                                           <h4>taxiseguro.com.ar es gratis para todos los usuarios</h4>
+
+                                       </li>
+                                       <li class="wow fadeInDown pad-lf40" data-wow-delay=".9s">
+                                           <i class="icon icon-chat"></i>
+                                           <h4>Califica tu experiencia para que la próxima sea mejor</h4>
+
+                                       </li>
+
+                                   </ul>
+                               </div>
+
+                       </div>
+                   </div>
+               </div>
+
+       </div><!-- row end -->
+   </div><!-- Container end -->
+</section>
+<!-- Section Features end -->
+
+<!-- Section Screenshot start -->
+<section id="overview">
+<div class="container">
+
+ <div class="row" style="padding-top: 30px;">
+           <iframe width="100%" height="420px" src="https://www.youtube.com/embed/S8pkqqELGaw?vq=hd480&amp;ap=%2526fmt%3D18&amp;rel=0" frameborder="0" allowfullscreen></iframe>
+ </div> <!-- row end  -->
+</div>  <!-- container end  -->
+</section>
+<!-- Section Screenshot end -->
+<section id="download"></section>
+
+<?= $this->element("footer");?>

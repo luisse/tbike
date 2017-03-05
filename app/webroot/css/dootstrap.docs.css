@@ -1,0 +1,10 @@
+ .bs-glyphicons{margin:0 -19px 20px -16px;overflow:hidden}
+ .bs-glyphicons-list{padding-left:0;list-style:none}
+ .bs-glyphicons li{float:left;width:25%;height:90px;padding:10px;font-size:10px;line-height:1.4;text-align:center;border:1px solid #fff;background-color:#f9f9f9}
+ .bs-glyphicons .glyphicon{margin-top:5px;margin-bottom:10px;font-size:24px}
+ .bs-glyphicons .glyphicon-class{display:block;text-align:center;word-wrap:break-word}
+ .bs-glyphicons li:hover{color:#fff;background-color:#4E61B7}
+ .bs-glyphicons li:active { color:white; background:green; } 
+ @media (min-width:768px){.bs-glyphicons{margin-left:0;margin-right:0}
+ .bs-glyphicons li{width:12.5%;font-size:12px}}
+ 

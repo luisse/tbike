@@ -31,14 +31,14 @@ class Cuenta extends AppModel {
 			)
 		),
 		'cliente_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'notblank' => array(
+				'rule' => array('notblank'),
 				'message' => 'Debe Ingresar un Cliente Valido para Asociar a la Cuenta Corriente'
 			)
 		),
 		'tallercito_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'notblank' => array(
+				'rule' => array('notblank'),
 				'message' => 'Debe Ingresar un Negocio Valido para Asociar a la Cuenta Corriente'
 			)
 		)

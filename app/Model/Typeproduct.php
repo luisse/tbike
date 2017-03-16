@@ -19,8 +19,8 @@ class Typeproduct extends AppModel {
 	
 	var $validate = array(
 		'descripction' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'notblank' => array(
+				'rule' => array('notblank'),
 				'message' => 'Debe Ingresar la Descripción del tipo de producto',
 				'required' => true
 			),

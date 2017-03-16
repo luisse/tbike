@@ -21,8 +21,8 @@ class Tallercito extends AppModel {
 				'rule' => array('numeric'),
 				'message' => 'EL CUIT DEBEN SER SOLO NUMEROS'
 			),
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar el CUIT'
 			),
 		),
@@ -31,8 +31,8 @@ class Tallercito extends AppModel {
 				'rule' => array('maxLength',60),
 				'message' => 'La Razon Social no debe sobrepasar los 60 Caracteres'
 			),
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar la Razon Social'
 			),
 		),
@@ -41,14 +41,14 @@ class Tallercito extends AppModel {
 				'rule' => array('maxLength',60),
 				'message' => 'Debe Ingresar la Direccion'
 			),
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar la Direccion'
 			),
 		),
 		'telefono' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar el Telefono'
 			),
 		),
@@ -57,8 +57,8 @@ class Tallercito extends AppModel {
 				'rule' => array('email'),
 				'message' => 'Debe Ingresar un Email correcto'
 			),
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar el Correo Electrónico'
 			),
 		),
@@ -70,19 +70,19 @@ class Tallercito extends AppModel {
 		),
 		'provincia_id' => array(
 			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+				'rule' => array('notBlank'),
 				'message' => 'Debe Seleccionar la Provincia'
 			),
 		),
 		'departamento_id' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Seleccionar el Departamento'
 			),
 		),
 		'localidade_id' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Seleccionar la Localidad'
 			),
 		),

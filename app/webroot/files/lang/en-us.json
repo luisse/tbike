@@ -1,0 +1,18 @@
+{
+    "lang": {
+        "alreadyInCart": "\"{{name}}\" is already in cart. Click the cart icon to view your current items.",
+        "itemAddedToCart": "Item added to cart. Click the cart icon to view your current items.",
+        "itemRemovedFromCart": "Item removed from cart. Click the cart icon to view your current items.",
+        "labelAddToCart": "Add to Cart",
+        "labelAddedToCart": "Added to Cart",
+        "labelRemoveFromCart": "Remove from cart",
+        "labelChangeQuantity": "Use the arrow buttons to change the quantity you'd like to buy",
+        "labelUpdateCart": "Update Cart",
+        "labelGoToCheckout": "Checkout",
+        "labelItemSingular": "item",
+        "labelItemPlural": "items",
+        "labelUnitPrice": "Unit price",
+        "contactingPaymentProvider": "Contacting {{paymentProvider}}. Please, wait and do not reload the page.",
+        "cookiesAreDisabled": "The cookies in your browser are disabled and items added to cart will not be persisted across pages."
+    }
+}

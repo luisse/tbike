@@ -5,24 +5,14 @@ class Cliente extends AppModel {
 	//var $tablePrefix='shclientes.';
 	var $validate = array(
 		'nombre' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Nombre'
 			)
 		),
 		'apellido' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Apellido'
 			)
 		),
@@ -44,13 +34,8 @@ class Cliente extends AppModel {
 			)
 		),
 		'domicilio' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Domicilio'
 			)
 		),

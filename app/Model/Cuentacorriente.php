@@ -31,24 +31,14 @@ class Cuenta extends AppModel {
 			)
 		),
 		'cliente_id' => array(
-<<<<<<< HEAD
 			'notempty' => array(
 				'rule' => array('notempty'),
-=======
-			'notblank' => array(
-				'rule' => array('notblank'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar un Cliente Valido para Asociar a la Cuenta Corriente'
 			)
 		),
 		'tallercito_id' => array(
-<<<<<<< HEAD
 			'notempty' => array(
 				'rule' => array('notempty'),
-=======
-			'notblank' => array(
-				'rule' => array('notblank'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar un Negocio Valido para Asociar a la Cuenta Corriente'
 			)
 		)
@@ -111,8 +101,4 @@ class Cuenta extends AppModel {
 			return 0;
 	}
 }
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a

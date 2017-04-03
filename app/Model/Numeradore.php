@@ -3,13 +3,8 @@ class Numeradore extends AppModel {
 	var $name = 'Numeradore';
 	var $validate = array(
 		'detalle' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el detalle'
 			),
 			'maxlength' => array(
@@ -18,13 +13,8 @@ class Numeradore extends AppModel {
 			),
 		),
 		'rangodesde' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Rango Desde'
 			),
 			'numeric' => array(
@@ -33,13 +23,8 @@ class Numeradore extends AppModel {
 			),
 		),
 		'rangohasta' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Rango Hasta'
 			),
 			'numeric' => array(

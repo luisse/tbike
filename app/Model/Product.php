@@ -13,13 +13,8 @@ class Product extends AppModel {
 
 	var $validate = array(
 		'descripcion' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la descripcion del Producto',
 				'required' => true
 			),
@@ -29,13 +24,8 @@ class Product extends AppModel {
 
 		),
 		'sintetico' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Sintetico',
 				'required' => true
 			),
@@ -54,25 +44,15 @@ class Product extends AppModel {
 				'codbarraunico'=>array('rule'=>'isUnique','message'=>'Ya existe el Código de Barras ingresado')
 		),
 		'proveedore_id'=>array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Proveedor',
 				'required' => true
 			)		
 		),
 		'categoria_id'=>array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Categoria',
 				'required' => true
 			)		
@@ -198,30 +178,18 @@ class Product extends AppModel {
 							return false;
 						}
 					}else{
-<<<<<<< HEAD
 						return false;
-=======
-						return false;
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 					}
 				}else{
 					if($enstock >= 0)
 						return true;
 					else
-<<<<<<< HEAD
 						return false;				
-=======
-						return false;				
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				}
 			}else{
 				return false;
 			}
-<<<<<<< HEAD
 		}
-=======
-		}
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 	}
 }
 ?>

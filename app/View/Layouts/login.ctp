@@ -14,15 +14,6 @@
 	<?php echo $this->Html->css('../font-awesome/css/font-awesome.css'); ?>
     <!-- Page-Level Plugin CSS - Dashboard -->
 	<?php echo $this->Html->css('sb-admin.css'); ?>
-	<style>
-		body {
-			background:url(../img/back.JPG) no-repeat center center fixed;
-		 -webkit-background-size: cover;
-		 -moz-background-size: cover;
-		 -o-background-size: cover;
-		 background-size: cover;
-		}
-	</style>
 </head>
 <body>
 	<div class="container">

@@ -20,35 +20,20 @@ class Mensajesmantenimiento extends AppModel {
 			),
 		),
 		'enviarcorreo' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Seleccionar una opción'
 			),
 		),
 		'objetorevisar' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Especificar un Componente a Revisar'
 			),
 		),
 		'observaciones' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar una Observación'
 			),
 		)

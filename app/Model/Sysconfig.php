@@ -24,13 +24,8 @@ class Sysconfig extends AppModel {
 			),
 		),
 		'tallercito_id' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

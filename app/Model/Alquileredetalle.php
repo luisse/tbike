@@ -19,13 +19,8 @@ class Alquileredetalle extends AppModel {
 				'rule' => array('time'),
 				'message' => 'Debe Ingresar una Hora valida HH:MM'
 			),
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Hora'
 			),
 		),

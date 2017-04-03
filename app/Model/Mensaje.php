@@ -16,13 +16,8 @@ class Mensaje extends AppModel {
  */
 	public $validate = array(
 		'asunto' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el asunto',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -31,13 +26,8 @@ class Mensaje extends AppModel {
 			),
 		),
 		'detalle' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el detalle',
 				//'allowEmpty' => false,
 				//'required' => false,
@@ -54,13 +44,8 @@ class Mensaje extends AppModel {
 				//'last' => false, // Stop validation after this rule
 				'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la fecha',
 				//'allowEmpty' => false,
 				//'required' => false,

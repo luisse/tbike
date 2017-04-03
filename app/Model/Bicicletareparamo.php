@@ -20,13 +20,8 @@ class Bicicletareparamo extends AppModel {
 				'rule' => array('date'),
 				'message' => 'Debe Ingresar una fecha de Ingreso Válida'
 			),
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar una Fecha de Ingreso'
 			),
 		),
@@ -35,24 +30,14 @@ class Bicicletareparamo extends AppModel {
 				'rule' => array('date'),
 				'message' => 'Debe Ingresar una Fecha de Salida Probable'
 			),
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar una Fecha de Egreso Probable'
 			),
 		),
 		'detallereparacion' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar un Detalle del Trabajo a Realizar'
 			),
 			'minLength' => array(
@@ -65,13 +50,8 @@ class Bicicletareparamo extends AppModel {
 			)
 		),
 		'importetotal' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar un Importe'
 			),
 			'decimal' => array(

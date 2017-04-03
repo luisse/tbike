@@ -18,13 +18,8 @@ class Subtypeproduct extends AppModel {
 	
 	var $validate = array(
 		'descripction' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar una Descripción',
 				'required' => true
 			),
@@ -36,13 +31,8 @@ class Subtypeproduct extends AppModel {
 			),
 		),
 		'tiponegocio_id' => array(
-<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-=======
-			'notempty' => array(
-				'rule' => array('notempty'),
->>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'No se encontro el tipo de Negocio',
 			),
 			'numeric' => array(

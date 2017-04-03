@@ -58,4 +58,44 @@ class AppModel extends Model {
 	    }
 	    return $newDate;
 	}	
+
+ function upload_image_to_ws($filename = null){
+    if(empty($filename)) return '';
+
+		App::uses('AmazonS3', 'AmazonS3.Lib');
+    //Config read
+    Configure::load('appconf');
+		$aws_key   = Configure::read('aws_key');
+		$ws_skey   = Configure::read('ws_skey');
+		$ws_bucket = Configure::read('ws_bucket');
+
+    //Send to AmazonS3
+    $AmazonS3 = new AmazonS3(array($aws_key, $ws_skey, $ws_bucket));
+    $AmazonS3->amazonHeaders = array(
+        'x-amz-acl' => 'public-read',
+        'X-Amz-Meta-ReviewedBy' => 'admin@taxiar.com.ar'
+    );
+    $AmazonS3->put(WWW_ROOT.$filename,'files/img');
+    $url_image = $AmazonS3->publicUrl($filename);
+    $path_image = str_replace('http://tb.s3.amazonaws.com','',!empty($url_image) ? $url_image : '');
+    return $path_image;
+  }
+
+  function drop_image_from_ws($url_filename = null){
+    if(empty($filename)) return '';
+
+		App::uses('AmazonS3', 'AmazonS3.Lib');
+    //Config read
+    Configure::load('appconf');
+		$aws_key   = Configure::read('aws_key');
+		$ws_skey   = Configure::read('ws_skey');
+		$ws_bucket = Configure::read('ws_bucket');
+
+    //Send to AmazonS3
+    $AmazonS3 = new AmazonS3(array($aws_key, $ws_skey, $ws_bucket));
+    $path_delete = str_replace('http://tb.s3.amazonaws.com/','',!empty($url_filename) ? $url_filename : '');
+    if(!empty($path_delete)){
+      $AmazonS3->delete(trim($path_delete));
+    }
+  }
 }

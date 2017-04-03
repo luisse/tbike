@@ -1,0 +1,1 @@
+update helps set helpdetail=replace(helpdetail,'<img src=','<img style="max-width:890px" src=');

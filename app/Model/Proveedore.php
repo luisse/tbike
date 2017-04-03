@@ -20,8 +20,13 @@ class Proveedore extends AppModel {
 			),
 		),
 		'denominacion' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Denominación'
 			),
 			'maxLength' => array(
@@ -34,8 +39,13 @@ class Proveedore extends AppModel {
 				'rule' => array('email'),
 				'message' => 'Debe Ingresar un Correo Electrónico válido'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Corre Electrónico'
 			),
 		),

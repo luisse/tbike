@@ -69,7 +69,11 @@ class Tallercito extends AppModel {
 			),
 		),
 		'provincia_id' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
+=======
+			'notEmpty' => array(
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'rule' => array('notBlank'),
 				'message' => 'Debe Seleccionar la Provincia'
 			),

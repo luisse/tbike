@@ -1,0 +1,261 @@
+/* Responsive Styles
+================================================== */
+
+/* Large Devices, Wide Screens */
+@media (min-width : 1200px) {
+	.dropdown i{
+		display: none;
+	}
+	.hidden-md {
+		display: none;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media (min-width : 992px) and (max-width: 1199px) {
+	.hidden-md {
+		display: none;
+	}
+}
+
+/* Small Devices, Tablets */
+@media (min-width : 768px) and (max-width: 991px) {
+	.navbar-right {
+    	display: none;
+	}
+	.heading-inner::before,.heading-inner::after{
+		display: none;
+	}
+	.heading-inner {
+	    padding-top: 40px;
+	}
+	.slider-content {
+	    padding-top: 0px;
+	}
+	/*.navbar-brand {
+	    height: 15px;
+	    padding: 10px 7px;
+	}*/
+	.slider-help h1 {
+	    margin-left: 30px;
+	}
+	.nav > li > a {
+	    padding: 15px 5px;
+	    font-size: 12px;
+	}
+	.columns {
+	    margin-bottom: 35px;
+	}
+	.columns:after{
+		border: none;
+	}
+	.flaoting-img{
+		margin: 30px 0px;
+	}
+	.top-link li{
+		margin-bottom: 38px;
+	}
+	#howto .bg-driver {
+	    background: url(https://taxiar-files.s3.amazonaws.com/img/landpage/driver-box-movil-bg.jpg);
+	    background-repeat: no-repeat;
+	    background-position: center top;
+	    height: auto;
+	}
+	.howto-item-content img {
+    	display: none;
+	}
+	.howto-item-content li p {
+    	margin-left: 1px;
+	}
+	.howto-item-content ol {
+    	padding-left: 1px;
+	}
+	.howto-item-content ul {
+	    margin-top: 3px;
+	}
+	.hidden-md {
+		display: none;
+	}
+	#contact .col-md-6 {
+	    border-right: 0px;
+	}
+	#contact .col-md-5 {
+    	margin-left: 0px;
+	}
+	#contact .privacy {
+	    padding-top: 2px;
+	}
+	.pull-right {
+    	padding-right: 60px;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media (min-width : 320px) and (max-width : 767px)  {
+	.heading-inner {
+    	width: 90%;
+	}
+	.top-link li{
+		margin-bottom: 38px;
+	}
+	.on.navbar-default .navbar-brand {
+    	margin-left: -70px;
+	}
+	.item-green {
+		margin-left: 0px;
+	}
+	.slider-content {
+	    padding-top: 0px;
+	}
+	.heading-inner::before,.heading-inner::after{
+		display: none;
+	}
+	.slider-content .btn-container .btn-deafult{
+		margin-bottom: 20px;
+	}
+	.slider h1 {
+	    font-size: 22px;
+	    margin-right: 20px;
+	}
+	.slider h2 {
+	    font-size: 22px;
+	    margin-right: 100px;
+	}
+	.slider-passengers {
+	    background: url("https://taxiar-files.s3.amazonaws.com/img/landpage/showcase-passenger-bg-device.jpg") no-repeat center;
+	    background-size: cover;
+	    min-height: 480px;
+	}
+	.slider-passengers h1 {
+	    margin-right: 70px;
+	    font-size: 30px;
+	}
+	.slider-passengers h2 {
+	    margin-right: 120px;
+	    font-size: 24px;
+	}
+	.slider-drivers {
+	    background: url("https://taxiar-files.s3.amazonaws.com/img/landpage/showcase-driver-bg-device.jpg") no-repeat right fixed;
+	    background-size: cover;
+	    min-height: 480px;
+	}
+	.slider-drivers h1 {
+	    margin-right: 20px;
+		font-size: 23px;
+	}
+	.slider-drivers h2 {
+	    margin-right: 140px;
+	    font-size: 22px;
+	}
+	.slider-radio h1 {
+	    margin-right: 40px;
+	    font-size: 30px;
+		font-weight: 500;
+	}
+	.slider-radio h2 {
+	    margin-right: 14px;
+		font-size: 21px;
+	}
+	.slider-help h1 {
+		margin: 0 -110px 0 2px;
+		font-size: 32px;
+	}
+	.slider-help h2 {
+		margin: 20px -170px 0 2px;
+		font-size: 16px;
+	}
+	.sec-title{
+		font-size: 24px;
+	}
+	#about{
+		padding: 20px 0px;
+	}
+	#about h4 {
+	    padding: 0 40px 40px 40px;
+	}
+	#about-blue h4 {
+    	padding: 0 40px 40px 40px;
+	}
+	#about-black h4 {
+    	padding: 0 40px 40px 40px;
+    	font-size: 16px;
+	}
+	#howto .bg-driver {
+	    background: url(https://taxiar-files.s3.amazonaws.com/img/landpage/driver-box-movil-bg.jpg);
+	    background-repeat: no-repeat;
+	    background-position: center top;
+	    height: auto;
+	}
+	#howtodo .sec-title {
+	    font-size: 24px;
+	}
+	.howto-item-content img {
+    	display: none;
+	}
+	.howto-item-content li p {
+    	margin-left: 1px;
+	}
+	.howto-item-content ol {
+    	padding-left: 1px;
+	}
+	.howto-item-content ul {
+	    margin-top: 3px;
+	}
+	.hidden-xs {
+		display: none;
+	}
+	.feature-bg:hover{
+		border-radius: 1%;
+		margin-bottom: 10px;
+	}
+	.feature-blue-bg:hover{
+		border-radius: 1%;
+		margin-bottom: 10px;
+	}
+	.feature-yellow-bg:hover{
+		border-radius: 1%;
+		margin-bottom: 10px;
+	}
+	.feature-content h3 {
+    	font-size: 28px;
+	}
+	.feature-content h3:after{
+		left: 42%;
+	}
+	.columns {
+	    margin-bottom: 35px;
+	}
+	.columns:after{
+		border: none;
+	}
+	.pricing-wrapper {
+	    margin-bottom: 40px;
+	}
+	.btn-container a {
+	    margin-right: -1px;
+	}
+	.flaoting-img{
+		margin: 20px 0px;
+	}
+	.logo-title img{
+		width: 60%;
+	}
+	#download .col-md-5 {
+    	margin-left: 0px;
+    	padding-top: 40px;
+	}
+	#contact .col-md-5 {
+    	margin-left: 0px;
+    	padding-top: 40px;
+	}
+	#contact .privacy {
+	    padding-top: 2px;
+	}
+	.btn-footer-container {
+	    margin-bottom: 40px;
+	}
+	.pull-right {
+    	padding-right: 60px;
+	}
+
+}

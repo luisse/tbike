@@ -1,0 +1,215 @@
+<?= $this->element("header");?>
+<div class="row" style="padding-top: 150px"></div>
+
+<!-- Section Privacy start -->
+<section>
+
+<div class="container">
+<div class="row">
+
+<div class="heading-inner text-center">
+
+<h1 class="sec-title">Políticas de <strong>Privacidad</strong></h1>
+
+</div>
+<div class="col-md-12 wow fadeInLeft" data-wow-delay=".3s">
+
+<!-- Privacy Policy -->
+<div id="policy">
+<p><strong>Viveo SRL</strong> respeta la privacidad de sus clientes, contactos comerciales y empleados. Esta política describe la política de Viveo en la gestión de la información personal que posee . Viveo está obligado por los National Privacy Principles (Principios de Privacidad Nacionales o NPPs) contenidas en la Ley de Privacy Act 1988 of Australia (Ley de Privacidad de 1988 de Australia).En resumen, la "información personal " es información relativa a una persona que puede ser utilizado para identificar a la misma.
+            </p>
+
+            <p class="privacy-color">
+                ¿Por qué Viveo recopila información personal?
+            </p>
+            <p>
+            Viveo recopila información personal con el fin de llevar a cabo nuestro negocio de venta de  productos y servicios. También puede recopilar información de uso del sitio web  para utilizarla con fines de mejora de página web y de marketing.
+            </p>
+
+            <p class="privacy-color">
+                ¿Sobre quién se recopila información personal?
+            </p>
+            <p>
+                El tipo de información personal que Viveo podrá recoger y almacenar incluye (pero no se limita a) la información sobre los clientes de Viveo.
+            </p>
+
+            <p class="privacy-color">
+                ¿Qué tipo de información personal se recopila?
+            </p>
+            <p>
+                En general, el tipo de información personal que Viveo recoge y mantiene, incluye (pero no se limita a) nombres, direcciones, datos de contacto, datos de tarjetas de crédito y direcciones de correo electrónico, que nos ayudan en la realización de nuestro negocio y a cumplir con nuestras obligaciones legales. En la mayoría de los casos, si no se proporciona la información personal que solicitamos, es posible que no seamos capaces de suministrar el producto o servicio en cuestión.
+            </p>
+
+            <p class="privacy-color">
+                ¿Cómo recopilamos información personal?
+            </p>
+            <p style="font-size: 12px!important">
+                Al visitar este sitio, nuestro servidor registra la siguiente información que es proporcionada por el navegador sólo para fines estadísticos:<br>
+                <blockquote>
+                    <p>
+                        - El tipo de navegador y sistema operativo que esté utilizando
+                    </p>
+                    <p>
+                        - Su nombre de dominio de nivel superior (por ejemplo, .com , .gov , .au , .uk , etc.)
+                    </p>
+                    <p>
+                        - La dirección del sitio de referencia (por ejemplo, el sitio anterior que ha visitado), y
+                    </p>
+                    <p>
+                        - La dirección IP de su servidor (un número que es exclusivo de la máquina a través del cual usted está conectado a Internet).
+                    </p>
+                </blockquote>
+                <p style="text-align:left">Además, nuestro servidor registra la siguiente información:</p>
+                <blockquote>
+                    <p>
+                        - La fecha y hora de su visita; y
+                    </p>
+                    <p>
+                        - La dirección de las páginas visitadas y los documentos descargados.
+                    </p>
+                </blockquote>
+                <p>Toda esta información se utiliza sólo para propósitos de administración de análisis o de los sistemas estadísticos. No se hará ningún intento de identificar a los usuarios o sus actividades de navegación.</p>
+            </p>
+
+            <p class="privacy-color">
+                Recaudación de la información en la página web.
+            </p>
+            <p>
+                Viveo recoge información personal de su sitio web a través de mensajes de correo electrónico. También usamos a terceros para analizar el tráfico en ese sitio web, lo que puede implicar la utilización de cookies. La información recopilada a través de este tipo de análisis es anónima.
+            </p>
+
+            <p class="privacy-color">
+                ¿De qué manera podemos utilizar y divulgar su información personal?
+            </p>
+            <p>
+                Viveo puede utilizar y divulgar su información personal con el objetivo principal para el que se recoge, para fines secundarios razonablemente previsibles, que se relacionan con el propósito principal y en otras circunstancias autorizadas por la Ley de Privacidad de Australia. En general, podemos usar y divulgar su información personal para los siguientes fines:
+                <blockquote>
+                    <p>
+                        - Para operar y administrar nuestro negocio;
+                    </p>
+                    <p>
+                        - Para llevar a cabo nuestro negocio, incluso para fines de marketing y de investigación;
+                    </p>
+                    <p>
+                        - Para comunicarnos con usted; y
+                    </p>
+                    <p>
+                        - Para cumplir con nuestras obligaciones legales.
+                    </p>
+                </blockquote>
+                <p>Además de en las anteriores circunstancias, su información personal no será revelada sin su consentimiento.</p>
+            </p>
+
+            <p class="privacy-color">
+                ¿A quién podríamos revelar su información personal?
+            </p>
+            <p>
+                Podemos revelar su información personal a otras compañías o individuos que nos ayudan a proporcionar los servicios o los que realicen funciones en nuestro nombre.
+            </p>
+
+            <p class="privacy-color">
+                Gestión de la información personal
+            </p>
+            <p>
+                Las NPPs nos obligan a tomar medidas razonables para proteger la seguridad de la información personal. Los miembros del equipo de Viveo están obligados a respetar la confidencialidad de la información personal y la privacidad de los individuos. Viveo tomará medidas para proteger la información personal en poder de un mal uso, pérdida, acceso no autorizado, modificación o divulgación, por ejemplo, mediante el uso de la seguridad física y el acceso restringido a los registros electrónicos. Comprar en este sitio web es seguro, usando SSL estándar y características de seguridad de cifrado de 40 bits para todas las áreas de entrada de información personal. Una vez que la información está en nuestros servidores de almacenamiento, estos protegen la información utilizando la tecnología de seguridad. Cuando ya no necesitamos sus datos personales para un fin permitido en virtud de las NPP, tomaremos las medidas razonables para destruirla.
+            </p>
+
+            <p class="privacy-color">
+                ¿Cómo podemos mantener la información personal exacta y actualizada?
+            </p>
+            <p>
+                Viveo se esfuerza por asegurar que la información personal con la que contamos sea exacta, completa y actualizada. Puede ponerse en contacto con nosotros con el fin de actualizar la información personal que tenemos sobre usted. Nuestros datos de contacto se exponen a continuación. Usted tiene la posibilidad de solicitar el acceso a su información personal. Sin perjuicio de las excepciones establecidas en la Ley de Privacidad, usted podrá solicitar el acceso a la información personal, que Viveo tiene sobre usted poniéndose en contacto con el Oficial de Privacidad de Viveo. Vamos a exigir que verifique su identidad y determinar la información que requiere. Para para proporcionar este acceso, es posible que le cobremos por ello. Le informaremos del costo probable de antemano.
+            </p>
+
+            <p class="privacy-color">
+                Cambios en esta política
+            </p>
+            <p>
+                Esta política será revisada de vez en cuando para considerar nuevas leyes, avances tecnológicos, cambios en nuestras operaciones y prácticas, y en el entorno empresarial. La versión más actualizada de esta política puede obtenerse poniéndose en contacto con nuestro Oficial de Privacidad.
+            </p>
+            <a name="terms" id="terms"></a>
+            <p class="privacy-color">
+                Más información
+            </p>
+            <p>
+                Si usted tiene alguna pregunta acerca de temas relacionados con nuestras políticas de privacidad, por favor, póngase en contacto con el Oficial de Privacidad de Viveo.<br></p>
+</div>
+</div>
+
+<div class="heading-inner text-center">
+<div class="row" style="padding-top: 80px"></div>
+<h1 class="sec-title">Términos y <strong>Condiciones</strong></h1>
+
+</div>
+
+<div class="col-md-12 wow fadeInLeft" data-wow-delay=".3s">
+
+<!-- Terms & Conditions -->
+<div id="terms">
+
+<p>Al realizar una orden de compra en nuestro sitio, el cliente está acordando con los términos y condiciones establecidos a continuación y reconoce haber leído y comprendido las advertencias importantes. El cliente está de acuerdo en que las leyes de Argentina se aplicarán a la compra o cualquier disputa que surgiera de ella.
+
+            <p class="privacy-color">
+                Precios:
+            </p>
+            <p>
+            Los precios están especificados en nuestro sitio web o en el presupuesto entregado al cliente. Todos los precios están sujetos a cambios sin previo aviso. Si hay un error en el precio, para protegernos de la pérdida o la venta por debajo del costo, nos reservamos el derecho de cancelar la orden o ponernos en contacto con usted y ofrecerle el producto al precio correcto o diferente. Por favor, póngase en contacto con nosotros si usted ve un error en el precio en nuestra web. Nos reservamos el derecho de cancelar cualquier orden por cualquier razón.
+            </p>
+
+            <p class="privacy-color">
+                Especificaciones:
+            </p>
+            <p>
+                Hacemos todo lo posible para representar los productos correctamente y con precisión. Elegimos cuidadosamente nuestros socios de fabricación. Sin embargo, todas las especificaciones citadas se basan en representaciones provistas por la compañía que fabrica ese elemento o parte y Viveo no es responsable de su exactitud o integridad. Todas las especificaciones están sujetas a cambios sin previo aviso. Fotos de los productos son sólo referenciales y pueden no ser la imagen exacta o la marca del modelo que usted compra y especificación de los artículos pueden variar sin previo aviso.
+            </p>
+
+            <p class="privacy-color">
+                Pagos:
+            </p>
+            <p>
+                Todas las compras realizadas online deben ser pagados por Mercado Pago y el comprador confirma que son o bien el titular de la tarjeta o tener el permiso expreso del titular de la tarjeta para usar la tarjeta para la compra.
+            </p>
+            <p>
+                La propiedad de los productos es de Viveo SRL hasta que el pago por los mismos se haya recibido en su totalidad.
+            </p>
+
+            <p class="privacy-color">
+                Envío:
+            </p>
+            <p>
+                Siempre que sea posible se utiliza un método de entrega rastreable. La entrega al transportista constituye la entrega al cliente. Cualquier daño visible producido durante el envío debe ser reportado a la compañía cuando el paquete se recibe, si el daño es grave la entrega del paquete no debe ser firmada. Compruebe su pedido con cuidado y notifique a Viveo de cualquier problema con su pedido de inmediato, para que podamos investigar y rectificar lo antes posible el inconveniente. Reclamos con fecha posterior a 15 días desde su recepción pueden ser negados.
+            </p>
+
+            <p class="privacy-color">
+                Política de Devoluciones:
+            </p>
+            <p>
+                Por favor, póngase en contacto con nosotros por teléfono o correo electrónico (a través de la página de contacto) antes de devolver cualquier producto por cualquier motivo. Viveo no se hace responsable por cualquier mercancía devuelta sin aprobación previa. La mercancía devuelta será inspeccionada antes de que su reembolso sea realizado. Víveo conserva todos los derechos a rechazar un reembolso. Un pedido de devolución debe ser solicitado dentro de los 15 días siguientes a la fecha de la compra del producto (fecha de facturación). Viveo sólo puede recibir pedidos de personas adultas. Prueba de edad puede ser requerida. Haremos nuestro mejor esfuerzo para procesar los reembolsos tan pronto como sea posible.
+
+            </p>
+
+            <p class="privacy-color">
+                Tiempos de Envío:
+            </p>
+            <p>
+                Los plazos de entrega varían en función de tiempo de la orden, el día, lugar y forma de entrega. Nuestros horarios de oficina están especificados en el sitio web. Los pedidos se procesan normalmente dentro de 24 horas y los artículos se envían generalmente el mismo / o el siguiente día hábil. Las entregas se envían a través de las compañías nacionales reconocidas. Hacemos todo lo posible para obtener su orden lo más rápidamente, pero no podemos ser responsables por el tiempo de entrega una vez que hemos pasado su orden a la compañía.<p>
+Por favor, póngase en contacto con nosotros si tiene alguna pregunta sobre nuestras condiciones de venta.<p>
+            </p></p>
+</div>
+</div>
+
+</div>
+
+
+</div>
+</div>
+
+</section>
+<!-- Section Privacy end -->
+
+
+    <div align="center" class="bg-slogan">
+        <h2 class="sec-slogan"><strong>Rediseñando la experiencia</strong> de viajar en taxi!</h2>
+
+    </div>
+<?= $this->element("footer");?>    

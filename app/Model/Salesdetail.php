@@ -7,8 +7,13 @@ class Salesdetail extends AppModel {
 				'rule' => array('numeric'),
 				'message' => 'La Cantidad debe ser solo números'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Cantidad'
 			)
 		),
@@ -17,8 +22,13 @@ class Salesdetail extends AppModel {
 				'rule' => array('decimal'),
 				'message' => 'El Subtotal es incorrecto'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'No se encuentra el subtotal'
 			)
 		),

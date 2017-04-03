@@ -1,0 +1,44 @@
+<pre class="cake-error"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr585828d61fb20-trace').style.display = (document.getElementById('cakeErr585828d61fb20-trace').style.display == 'none' ? '' : 'none');"><b>Notice</b> (8)</a>: Undefined index: SERVER_NAME [<b>APP/Config/bootstrap.php</b>, line <b>38</b>]<div id="cakeErr585828d61fb20-trace" class="cake-stack-trace" style="display: none;"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr585828d61fb20-code').style.display = (document.getElementById('cakeErr585828d61fb20-code').style.display == 'none' ? '' : 'none')">Code</a> <a href="javascript:void(0);" onclick="document.getElementById('cakeErr585828d61fb20-context').style.display = (document.getElementById('cakeErr585828d61fb20-context').style.display == 'none' ? '' : 'none')">Context</a><pre id="cakeErr585828d61fb20-code" class="cake-code-dump" style="display: none;"><code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'types'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">'warning'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'error'</span><span style="color: #007700">),</span></span></code>
+<code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//'scopes'&nbsp;=&gt;&nbsp;array('users',&nbsp;'taxorders','taxubications','taxownerscars','taxjourneys','pages','mains'),</span></span></code>
+<span class="code-highlight"><code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'file'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'SERVER_NAME'</span><span style="color: #007700">].</span><span style="color: #DD0000">'-'</span><span style="color: #007700">.</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'SERVER_ADDR'</span><span style="color: #007700">].</span><span style="color: #DD0000">'.log'</span><span style="color: #007700">,</span></span></code></span></pre><pre id="cakeErr585828d61fb20-context" class="cake-context" style="display: none;">$boot = true
+$engine = &#039;File&#039;
+$duration = &#039;+10 seconds&#039;
+$prefix = &#039;myapp_&#039;
+$exception = array(
+	&#039;handler&#039; =&gt; &#039;ErrorHandler::handleException&#039;
+)
+$error = array(
+	&#039;handler&#039; =&gt; &#039;ErrorHandler::handleError&#039;,
+	&#039;level&#039; =&gt; (int) 24575
+)</pre><pre class="stack-trace">include - APP/Config/bootstrap.php, line 38
+Configure::bootstrap() - CORE/Cake/Core/Configure.php, line 92
+require - CORE/Cake/bootstrap.php, line 175
+ShellDispatcher::_bootstrap() - CORE/Cake/Console/ShellDispatcher.php, line 138
+ShellDispatcher::_initEnvironment() - CORE/Cake/Console/ShellDispatcher.php, line 100
+ShellDispatcher::__construct() - CORE/Cake/Console/ShellDispatcher.php, line 54
+ShellDispatcher::run() - CORE/Cake/Console/ShellDispatcher.php, line 65
+[main] - APP/Console/cake.php, line 47</pre></div></pre><pre class="cake-error"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr585828d6205e0-trace').style.display = (document.getElementById('cakeErr585828d6205e0-trace').style.display == 'none' ? '' : 'none');"><b>Notice</b> (8)</a>: Undefined index: SERVER_ADDR [<b>APP/Config/bootstrap.php</b>, line <b>38</b>]<div id="cakeErr585828d6205e0-trace" class="cake-stack-trace" style="display: none;"><a href="javascript:void(0);" onclick="document.getElementById('cakeErr585828d6205e0-code').style.display = (document.getElementById('cakeErr585828d6205e0-code').style.display == 'none' ? '' : 'none')">Code</a> <a href="javascript:void(0);" onclick="document.getElementById('cakeErr585828d6205e0-context').style.display = (document.getElementById('cakeErr585828d6205e0-context').style.display == 'none' ? '' : 'none')">Context</a><pre id="cakeErr585828d6205e0-code" class="cake-code-dump" style="display: none;"><code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'types'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;array(</span><span style="color: #DD0000">'warning'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'error'</span><span style="color: #007700">),</span></span></code>
+<code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//'scopes'&nbsp;=&gt;&nbsp;array('users',&nbsp;'taxorders','taxubications','taxownerscars','taxjourneys','pages','mains'),</span></span></code>
+<span class="code-highlight"><code><span style="color: #000000"><span style="color: #0000BB">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'file'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'SERVER_NAME'</span><span style="color: #007700">].</span><span style="color: #DD0000">'-'</span><span style="color: #007700">.</span><span style="color: #0000BB">$_SERVER</span><span style="color: #007700">[</span><span style="color: #DD0000">'SERVER_ADDR'</span><span style="color: #007700">].</span><span style="color: #DD0000">'.log'</span><span style="color: #007700">,</span></span></code></span></pre><pre id="cakeErr585828d6205e0-context" class="cake-context" style="display: none;">$boot = true
+$engine = &#039;File&#039;
+$duration = &#039;+10 seconds&#039;
+$prefix = &#039;myapp_&#039;
+$exception = array(
+	&#039;handler&#039; =&gt; &#039;ErrorHandler::handleException&#039;
+)
+$error = array(
+	&#039;handler&#039; =&gt; &#039;ErrorHandler::handleError&#039;,
+	&#039;level&#039; =&gt; (int) 24575
+)</pre><pre class="stack-trace">include - APP/Config/bootstrap.php, line 38
+Configure::bootstrap() - CORE/Cake/Core/Configure.php, line 92
+require - CORE/Cake/bootstrap.php, line 175
+ShellDispatcher::_bootstrap() - CORE/Cake/Console/ShellDispatcher.php, line 138
+ShellDispatcher::_initEnvironment() - CORE/Cake/Console/ShellDispatcher.php, line 100
+ShellDispatcher::__construct() - CORE/Cake/Console/ShellDispatcher.php, line 54
+ShellDispatcher::run() - CORE/Cake/Console/ShellDispatcher.php, line 65
+[main] - APP/Console/cake.php, line 47</pre></div></pre>
+[36mWelcome to CakePHP v2.7.1 Console[0m
+---------------------------------------------------------------
+App : app
+Path: /home/luis/PHP/TST_BACKEND/app/
+---------------------------------------------------------------

@@ -1,0 +1,8 @@
+{
+   "config": {
+      "vendor-dir": "Vendor"
+   },
+   "require": {
+      "ktamas77/firebase-php dev-master": "*"
+   }
+}

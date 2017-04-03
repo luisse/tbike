@@ -14,8 +14,13 @@ class Button extends AppModel {
  */
 	public $validate = array(
 		'group_id' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar un usuario valido'
 			),
 			'numeric' => array(
@@ -24,14 +29,24 @@ class Button extends AppModel {
 			),
 		),
 		'buttondescr' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la descripcion del boton'
 			),
 		),
 		'modelname' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el detalle del modelo ',
 				'allowEmpty' => false
 			),
@@ -41,8 +56,13 @@ class Button extends AppModel {
 			),
 		),
 		'actionname' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Nombre de la accion'
 			),
 			'maxLength' => array(

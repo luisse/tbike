@@ -27,14 +27,24 @@ class Productsdetail extends AppModel {
 			'numeric' => array(
 				'rule' => array('numeric')
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Estado',
 			)
 		),
 		'product_id' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Producto'
 			)
 		),
@@ -99,7 +109,11 @@ class Productsdetail extends AppModel {
 				}
 				$data['Productsdetail'][$i]['error'] =$errordesc;
 			}else{
+<<<<<<< HEAD
 				$data['Productsdetail'][$i]['error'] =__('Sin Cambios');
+=======
+				$data['Productsdetail'][$i]['error'] =__('Sin Cambios');
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 			}
 			$i++;
 		}

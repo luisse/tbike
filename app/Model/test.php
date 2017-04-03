@@ -8,8 +8,13 @@ class Test extends AppModel{
 				'rule' => array('date'),
 				'message' => 'Debe Ingresar una Fecha Valida'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Fecha del test'
 			),
 			'fechavalidar'=>array(
@@ -21,8 +26,13 @@ class Test extends AppModel{
 				'rule' => array('time'),
 				'message' => 'Debe Ingresar una hora valida'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la hora'
 			)
 		),
@@ -31,8 +41,13 @@ class Test extends AppModel{
 				'rule' => array('decimal',1),
 				'message' => 'Debe Ingresar la temperatura'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la hora'
 			)
 		),
@@ -43,8 +58,13 @@ class Test extends AppModel{
 				'rule' => array('numeric'),
 				'message' => 'Debe Ingresar solo números'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar las pulsaciones'
 			),
 			'range' => array(

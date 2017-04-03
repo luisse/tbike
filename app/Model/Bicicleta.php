@@ -15,8 +15,13 @@ class Bicicleta extends AppModel {
  */
 	public $validate = array(
 		'marca' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Marca'
 			),
 			'maxLength' => array(
@@ -25,8 +30,13 @@ class Bicicleta extends AppModel {
 			),
 		),
 		'modelo' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el modelo'
 			)
 		),

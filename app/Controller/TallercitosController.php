@@ -90,10 +90,17 @@ class TallercitosController extends AppController {
 			throw new NotFoundException(__('Identificador Invalido'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
+<<<<<<< HEAD
 			if(!empty($data['Tallercito']['imglogotallercito']['tmp_name'])){
 				$cimage = new CimageComponent(new ComponentCollection());
 				/*imagen tamanio normal*/
 				list($fileData,$file_npath) = $cimage->ImagenToBlob($this->request->data['Tallercito']['imglogotallercito']['tmp_name'],50,100,'BENJABIKE.jpg','');
+=======
+			if(!empty($this->request->data['Tallercito']['imglogotallercito']['tmp_name'])){
+				$cimage = new CimageComponent(new ComponentCollection());
+				/*imagen tamanio normal*/
+				list($fileData,$file_npath) = $cimage->ImagenToBlob($this->request->data['Tallercito']['imglogotallercito']['tmp_name'],50,100,'TALLER_BANNER.jpg','');
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				if($fileData != -1){
 					$this->request->data['Tallercito']['logotallercito'] = $fileData;
 				}

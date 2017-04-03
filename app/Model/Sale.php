@@ -13,8 +13,13 @@ class Sale extends AppModel {
 				'rule' => array('decimal'),
 				'message' => 'No se Encontro el total de la venta'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'El total no puede ser vacio'
 			)
 		),
@@ -25,8 +30,13 @@ class Sale extends AppModel {
 			),
 		),
 		'tipofactura' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Seleccionar el Tipo de Factura'
 			)
 		),
@@ -35,8 +45,13 @@ class Sale extends AppModel {
 				'rule' => array('numeric'),
 				'message' => 'El Nro de Factura solo permite números'
 			),
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notempty' => array(
+				'rule' => array('notempty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el Numero de Factura'
 			),
 		),

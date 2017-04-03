@@ -23,7 +23,10 @@ class SendmailShell extends AppShell {
   		}else{
   			$filter_send = 'Mensaje.fechasendauto = "'.date('Y-m-d').'" AND Mensaje.mailauto = 1';
   		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
   		$mensajes=$this->Mensaje->find('all',array('conditions'=>array($filter_send,
   																		//'Mensaje.tallercito_id'=>$this->Session->read('tallercito_id'),
   																		'Mensaje.enviado = 0 OR Mensaje.enviado IS NULL'),
@@ -36,6 +39,7 @@ class SendmailShell extends AppShell {
   		*/
   		$i=0;
   		foreach($mensajes as $mensaje){
+<<<<<<< HEAD
   				$str_to_send[$i]['msgcab']		    =	$mensaje['Mensaje']['asunto'];
   				$str_to_send[$i]['msgdetalle']    =	$mensaje['Mensaje']['detalle'];
   				$str_to_send[$i]['tipomen']		    =	$mensaje['Tipomen']['descripcion'];
@@ -46,6 +50,23 @@ class SendmailShell extends AppShell {
 
           $str_to_send[$i]['user_id'] = !empty($user['User']['id']) ? $user['User']['id'] : 0;
 					$str_to_send[$i]['email']	  = !empty($user['User']['email']) ? $user['User']['email'] : '';
+=======
+  				$str_to_send[$i]['msgcab']		=	$mensaje['Mensaje']['asunto'];
+  				$str_to_send[$i]['msgdetalle']	=	$mensaje['Mensaje']['detalle'];
+  				$str_to_send[$i]['tipomen']		=	$mensaje['Tipomen']['descripcion'];
+  				$str_to_send[$i]['tallercito_id']		=	$mensaje['Mensaje']['tallercito_id'];
+
+  				$user = $this->User->find('first',array('conditions'=>array('User.id'=>$mensaje['Mensaje']['userrec_id']),
+  															'fields'=>array('User.email','User.id')));
+  				if(!empty($user)){
+  					$str_to_send[$i]['user_id'] =$user['User']['id'];
+  					$str_to_send[$i]['email']	=$user['User']['email'];;
+  				}else{
+  					$str_to_send[$i]['user_id']=0;
+  					$str_to_send[$i]['email']='';
+  				}
+
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
   				$str_to_send[$i]['mensaje_id']=$mensaje['Mensaje']['id'];
   				$i++;
   		}
@@ -81,6 +102,7 @@ class SendmailShell extends AppShell {
   							$resultado = 0;
   					}
 
+<<<<<<< HEAD
   					$data['Senderlog']['fechaenv']	   = date('Y-m-d H:i:s');
   					$data['Senderlog']['mensaje_id']   = $str_send['mensaje_id'];
   					$data['Senderlog']['correoe']	     = $str_send['email'];
@@ -88,6 +110,15 @@ class SendmailShell extends AppShell {
   					$data['Senderlog']['mensajeerror'] = $error;
   					$data['Senderlog']['tallercito_id']= $str_send['tallercito_id'];
   					$data['Senderlog']['user_id']	     = $str_send['user_id'];
+=======
+  					$data['Senderlog']['fechaenv']	=date('Y-m-d H:i:s');
+  					$data['Senderlog']['mensaje_id']	=$str_send['mensaje_id'];
+  					$data['Senderlog']['correoe']	=$str_send['email'];
+  					$data['Senderlog']['resultado']	=$resultado;
+  					$data['Senderlog']['mensajeerror']=$error;
+  					$data['Senderlog']['tallercito_id']=$str_send['tallercito_id'];
+  					$data['Senderlog']['user_id']	=$str_send['user_id'];
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 
   					$this->Senderlog->create();
   					if (!$this->Senderlog->save($data)) {
@@ -97,9 +128,15 @@ class SendmailShell extends AppShell {
   						if(empty($error)){
   							//actualizo estado de mensaje con enviado
   							if($str_send['mensaje_id']>0){
+<<<<<<< HEAD
   								$mensajemantenimiento['Mensaje']['id']       = $str_send['mensaje_id'];
   								$mensajemantenimiento['Mensaje']['enviado']  = 1;
   								$mensajemantenimiento['Mensaje']['fechasend']= date('Y-m-d');
+=======
+  								$mensajemantenimiento['Mensaje']['id']=$str_send['mensaje_id'];
+  								$mensajemantenimiento['Mensaje']['enviado']=1;
+  								$mensajemantenimiento['Mensaje']['fechasend']=date('Y-m-d');
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
   								$this->Mensaje->create();
   								$this->Mensaje->Save($mensajemantenimiento);
   							}

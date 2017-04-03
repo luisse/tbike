@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tst-taxiseguro",
+  "private_key_id": "196ed78fe251fb21a8bbd4b73c1a55dea2ef6975",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCfgtILJKE4+1BV\nMysVx8AUXaBQWBLDKz6fFA+HWxl/OREjMT9VBFc9pmd09+KMvnHshT6Fi9GkTcOb\nfi17wQ4LXp5AWnVnJDSdmEJ4isJvrOK3TnCND6+IP8mr4GU0FPmzcsWQphtYh1dd\n2UgOQX9qg30pnyh6pKizvMxVMTauT2Fpwkp1WnzVm0WBmo9q0Jwqrn35R4/rEXQa\njA3abmkkkwfJNlB580RTYkuSVUyLYCbRZs45PG5WVwuR/RpnWdWP1woFuk4Mlnl1\npgCA9c3XFKCzpGmCa60X7c+/kcMICUOYet1BMCNNsw3h/n9YmO7WwGB0DfHtr4nB\nyJzhLf3HAgMBAAECggEBAJ2D5QFF+cM4QRrxfXFzoJU744yTfGuob51NhQwoBOSi\nKO80uZKtx6zEf1N9WgWcJwnmhlgAO1RhynDpR+b2PHUzyVhJO7hPg3nAmptIgzse\nYX+cgP57Z95HB1KoM6gbsnznMHtn3IculzLA1yvkt/spv1Zzqdh6c3GSVcEm6RV1\nFM6p9EAwFlIYceLk01b8ntx1/Hkx48ByCAJoKVE5vJneuOU8v4sNf8ousFQ7zMhK\n88u/Iuxtc1UvMROr+1nUIpFLCDvBZauMxQG7JXcbiPo7ZmnunnSJh3l71QCi3xGn\nigI9WTNgaxheKpb6Klc8LpkIu/mTqnNgzuyiBFQyG1ECgYEAzm/ng/1kg2rN86pE\n6ksiKsMk26k7f7Zz0/oFvVDBziPiw8ADAUZDowuILt5lEWIPFCDN8VOapNm6INvt\n6iqYaqCFxEjyfseZ/nZzH7ZOjw7tki4RoU3rinkQNg8AfGMfwMVA2290ldkubNFD\nOMYgk6JUcXXhVxjbPwyE+OhTR38CgYEAxc67DQ+o9IHpfPn+0h7SvKs+ZKqljEpB\nEY/9v+mZb9oIRdL2JL0I/1gZnVmWC58iQtbwmOiOxeV97EtCdDlzW8+A5I8ZB6+G\n4zwt0GTw2CgQhcjJyMgwpEqzBwDRIz8kUUv/BKkY7rnsaSChYmwrTNpKQDm+irAj\np00MSe2SLbkCgYBD4/d+p+nTcl+S/+80Ikt1RsIrX2eK48UJ9JLIpPNnyNN9zvru\nA16hE1zRFSCl69rLotI3yGf2SQh2X/3JYgLIJkx3tgnR+fDCB9BqoHkLgTxOM8pm\ngwqweooDTUG6ppq9ueFPiUMNOOSUsulplXcHNn6Q5dSa4TjRbluYxEcHHwKBgE++\n0VApsQ6p1SzKSH4DaSggzW2eElGlmefvqfgVwAME3nLv4sXa4+a1aNYzyLb0t8ZE\niwjKMMz9gS+jA66Bfs1TsX3zZr7fd7zihQHPv/0U4dxdn2PvuRRy/Qvku2u/R+/y\neGQzm9aaZAHZ4tYgD7DTDD4qSXP2INmQyVSAj38ZAoGBAIlB+qQZeo9RtB0/KVpn\nTrZ+pqfk6ROoMFvgrIrWZv8RSsqXncqa/WTtpBch3udQ9mcCCh07eL6RXMD0BFqh\nT0Nr9Ev6odywnTqHSfcCU5kXLW9Ou8fMuwo4v3m0ssG4HxHuYu1pzkmgoJoqzFVx\nZ5OyCPZ/Dl2U2eoeqUSGbLBa\n-----END PRIVATE KEY-----\n",
+  "client_email": "tst-taxiseguro@appspot.gserviceaccount.com",
+  "client_id": "117474928676053891504",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tst-taxiseguro%40appspot.gserviceaccount.com"
+}

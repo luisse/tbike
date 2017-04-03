@@ -12,8 +12,13 @@ class CimageComponent extends Component{
 	*/
 	function ImagenToBlob($path,$max_width,$max_height,$namefile,$subdir = ''){
 		$types = array(1 => "gif", "jpeg", "png", "swf", "psd", "wbmp",'jpg'); // usado para determinar el tipo de imagen
+<<<<<<< HEAD
 
 		if(!file_exists($path)) return FILE_NOT_FOUND; /*No se encuentra la imagen*/
+=======
+		if(!file_exists($path)) return FILE_NOT_FOUND; /*No se encuentra la imagen*/
+
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 		/*recupera los datos de la imagen que estamos por cargar*/
     		list($width, $height, $image_type) = getimagesize($path);
 		/*Si no se especifica una tamano para el width y heigt se toma el que tiene por defecto la imagen*/

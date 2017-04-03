@@ -15,14 +15,24 @@ class Alquilere extends AppModel {
  */
 	public $validate = array(
 		'detalle' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notblank' => array(
+				'rule' => array('notblank'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar un detalle de alquiler'
 			),
 		),
 		'total' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notblank' => array(
+				'rule' => array('notblank'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'No se encontro un totalizador'
 			),
 		),

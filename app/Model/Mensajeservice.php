@@ -14,8 +14,13 @@ class Mensajeservice extends AppModel {
  */
 	public $validate = array(
 		'detalleservice' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar el detalle'
 			),
 			'maxLength' => array(
@@ -24,14 +29,24 @@ class Mensajeservice extends AppModel {
 			),
 		),
 		'enviarcorreo' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Indicar el Envío de Correo'
 			),
 		),
 		'cantmensajes' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingesar la Cantidad de Mensajes a Enviar'
 			),
 			'numeric' => array(
@@ -40,8 +55,13 @@ class Mensajeservice extends AppModel {
 			),
 		),
 		'fechaaprox' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Fecha de Próximo Servicio'
 			),
 			'date' => array(

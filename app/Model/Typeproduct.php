@@ -19,8 +19,13 @@ class Typeproduct extends AppModel {
 	
 	var $validate = array(
 		'descripction' => array(
+<<<<<<< HEAD
 			'notBlank' => array(
 				'rule' => array('notBlank'),
+=======
+			'notblank' => array(
+				'rule' => array('notblank'),
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a
 				'message' => 'Debe Ingresar la Descripción del tipo de producto',
 				'required' => true
 			),
@@ -53,4 +58,8 @@ class Typeproduct extends AppModel {
 	}
 	
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> d1dd9254b21e573d5d9674487d0b9be918df744a

@@ -51,8 +51,8 @@ class Sale extends AppModel {
 				'rule' => array('date'),
 				'message' => 'La Fecha de Compra es Invalida'
 			),
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar Fecha de Pago'
 			),
 		)/***,

@@ -10,14 +10,21 @@ class UsersController extends AppController{
 	//Funcion principal para visualizar todos los usuarios
 	function index(){
 		$this->User->recursive = 0;
-        $this->set('title_for_layout','Administracion Datos de Usuario');
+        $this->set('title_for_layout',__('Administracion Datos de Usuario'));
 		$this->set('tipousr',$this->Session->read('tipousr'));
+
 	}
 
 	function listusers(){
 		$this->User->recursive = 0;
-        	$this->set('title_for_layout','Administracion Datos de Usuario');
-		$ls_filtro =' 1=1 ';
+		//save for session read
+		$this->Session->write('fil_documento', $this->request->data['Cliente']['documento']);
+		$this->Session->write('fil_nombre', $this->request->data['Cliente']['nombre']);
+		$this->Session->write('fil_apellido', $this->request->data['Cliente']['apellido']);
+
+
+
+		$ls_filtro = ' 1=1 ';
 		if($this->Session->read('tipousr') == 1){
 			$ls_filtro = ' 1=1 AND User.tallercito_id='.$this->Session->read('tallercito_id');
 		}else{
@@ -25,32 +32,32 @@ class UsersController extends AppController{
 		}
 		$ls_filtronotexist=' 1=1 ';
 		$ls_notexist = '';
-		if(!empty($this->request->data)){
-				if($this->request->data['Cliente']['documento']!= null &&
-					$this->request->data['Cliente']['documento']!= '')
+		if( !empty( $this->request->data) ){
+				if( $this->request->data['Cliente']['documento'] != null &&
+					$this->request->data['Cliente']['documento'] != '')
 					$ls_filtronotexist = $ls_filtronotexist.' AND clientes.documento = '.str_replace('.', '', $this->request->data['Cliente']['documento']);
-				if($this->request->data['Cliente']['nombre']!= null &&
-					$this->request->data['Cliente']['nombre']!= '')
+				if( $this->request->data['Cliente']['nombre'] != null &&
+					$this->request->data['Cliente']['nombre'] != '')
 					$ls_filtronotexist = $ls_filtronotexist." AND clientes.nombre like '%".$this->request->data['Cliente']['nombre']."%'";
-				if($this->request->data['Cliente']['apellido']!= null &&
-					$this->request->data['Cliente']['apellido']!= '')
+				if( $this->request->data['Cliente']['apellido'] != null &&
+					$this->request->data['Cliente']['apellido'] != '')
 					$ls_filtronotexist = $ls_filtronotexist." AND clientes.apellido like '%".$this->request->data['Cliente']['apellido']."%'";
 
-				if(($this->request->data['Cliente']['documento']!= null &&
-					$this->request->data['Cliente']['documento']!= '') OR ($this->request->data['Cliente']['nombre']!= null &&
-					$this->request->data['Cliente']['nombre']!= '') OR ($this->request->data['Cliente']['apellido']!= null &&
-					$this->request->data['Cliente']['apellido']!= ''))
+				if(($this->request->data['Cliente']['documento'] != null &&
+					$this->request->data['Cliente']['documento'] != '') OR ($this->request->data['Cliente']['nombre'] != null &&
+					$this->request->data['Cliente']['nombre'] != '') OR ($this->request->data['Cliente']['apellido'] != null &&
+					$this->request->data['Cliente']['apellido'] != ''))
 					$ls_notexist = ' AND EXISTS(SELECT id FROM clientes WHERE '.$ls_filtronotexist.' AND user_id = User.id)';
 		}
 		$this->paginate=array('limit' => 8,
-						'page' => 1,
-						'fields'=>array('User.id','User.username','User.email','Cliente.nombre','Cliente.apellido','Cliente.documento'),
-						'order'=>array('username'=>'asc'),
-						'joins'=>array(array('table'=>'clientes',
+						'page' 	=> 1,
+						'fields'=> array('User.id','User.username','User.email','Cliente.nombre','Cliente.apellido','Cliente.documento'),
+						'order'	=> array('username'=>'asc'),
+						'joins'	=> array(array('table'=>'clientes',
 															'alias'=>'Cliente',
 															'type'=>'LEFT',
 															'conditions'=>array('Cliente.user_id = User.id'))),
-						'conditions'=>$ls_filtro.$ls_notexist);
+						'conditions' => $ls_filtro.$ls_notexist);
 		$this->set('users', $this->paginate());
 	}
 
@@ -72,19 +79,19 @@ class UsersController extends AppController{
 					//Guardamos los datos de usuario y configuraciones en las sesion del usuario
 					$result = $this->User->getUserDetails($user['User']['group_id'],$user['User']['id']);
 					//SAVE SESSION
-					$this->Session->write('username',$user['User']['username']);
-					$this->Session->write('user_id',$user['User']['id']);
-					$this->Session->write('tipousr',$user['User']['group_id']);
-					$this->Session->write('userfoto',$user['Cliente']['foto']);
-					$this->Session->write('nomap',$user['Cliente']['apellido'].', '.$user['Cliente']['nombre']);
-					$this->Session->write('email',$user['User']['email']);
-					$this->Session->write('cliente_id',$user['Cliente']['id']);
-					$this->Session->write('tallercito_id',$user['User']['tallercito_id']);
-					$tallercito = $this->Tallercito->find('first',array('conditions'=>array('Tallercito.id'=>$user['User']['tallercito_id'])));
+					$this->Session->write( 'username', $user['User']['username']);
+					$this->Session->write( 'user_id', $user['User']['id']);
+					$this->Session->write( 'tipousr', $user['User']['group_id']);
+					$this->Session->write( 'userfoto', $user['Cliente']['foto']);
+					$this->Session->write( 'nomap', $user['Cliente']['apellido'].', '.$user['Cliente']['nombre']);
+					$this->Session->write( 'email', $user['User']['email']);
+					$this->Session->write( 'cliente_id', $user['Cliente']['id']);
+					$this->Session->write( 'tallercito_id', $user['User']['tallercito_id']);
+					$tallercito = $this->Tallercito->find('first',array('conditions' => array('Tallercito.id' => $user['User']['tallercito_id'])));
 					$this->Session->write('tallercito',$tallercito);
 					//SYSCONFIG
-					$sysconfig=$this->Sysconfig->find('first',array('conditions'=>array('Sysconfig.tallercito_id'=>$user['User']['tallercito_id']),
-																	'fields'=>array('Sysconfig.mailtransport','Sysconfig.mailfrom','Sysconfig.mailhost','Sysconfig.mailport','Sysconfig.mailuser','Sysconfig.mailpassword','Sysconfig.stockrestrict')));
+					$sysconfig = $this->Sysconfig->find('first',array('conditions' => array('Sysconfig.tallercito_id' => $user['User']['tallercito_id']),
+																	'fields' => array('Sysconfig.mailtransport','Sysconfig.mailfrom','Sysconfig.mailhost','Sysconfig.mailport','Sysconfig.mailuser','Sysconfig.mailpassword','Sysconfig.stockrestrict')));
 					if(!empty($sysconfig))
 						$this->Session->write('sysconfig',$sysconfig);
 					//END SAVE SESSION
@@ -199,18 +206,19 @@ class UsersController extends AppController{
                 //Clientes
                 $group->id=1;
 
-								$this->Acl->allow($group,'controllers/Alquileres/index');
-								$this->Acl->allow($group,'controllers/Alquileres/index');
-								$this->Acl->allow($group,'controllers/Alquileres/add');
-								$this->Acl->allow($group,'controllers/Alquileres/edit');
-								$this->Acl->allow($group,'controllers/Alquileres/delete');
-								$this->Acl->allow($group,'controllers/Alquileres/listalquileres');
-								$this->Acl->allow($group,'controllers/Alquileres/newrow');
-								$this->Acl->allow($group,'controllers/Alquileres/verdetallealquileres');
-								$this->Acl->allow($group,'controllers/Alquileres/imprimirticket');
-								$this->Acl->allow($group,'controllers/Alquileres/eliminardetalle');
-								$this->Acl->allow($group,'controllers/Alquileres/marcarentregado');
-								$this->Acl->allow($group,'controllers/Alquileres/marcarpagado');
+				$this->Acl->allow($group,'controllers/Alquileres/index');
+				$this->Acl->allow($group,'controllers/Alquileres/index');
+				$this->Acl->allow($group,'controllers/Alquileres/add');
+				$this->Acl->allow($group,'controllers/Alquileres/edit');
+				$this->Acl->allow($group,'controllers/Alquileres/delete');
+				$this->Acl->allow($group,'controllers/Alquileres/listalquileres');
+				$this->Acl->allow($group,'controllers/Alquileres/newrow');
+				$this->Acl->allow($group,'controllers/Alquileres/verdetallealquileres');
+				$this->Acl->allow($group,'controllers/Alquileres/imprimirticket');
+				$this->Acl->allow($group,'controllers/Alquileres/eliminardetalle');
+				$this->Acl->allow($group,'controllers/Alquileres/marcarentregado');
+				$this->Acl->allow($group,'controllers/Alquileres/marcarpagado');
+				$this->Acl->allow($group,'controller/Bicicletasparaalquileres/seleccionarbicicleta');
                 exit;
     }
 

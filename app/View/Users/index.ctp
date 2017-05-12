@@ -25,10 +25,11 @@
 						<div class="col-lg-3">			
 							<?php echo $this->Form->input('Cliente.documento', array(
 									'label' => __('Documento '),
-									'type'=>'text',
+									'type'  =>'text',
 									'placeholder' => __('Nro de Documento'),
-									'class'=>'form-control input-sm',
-									'size'=>10
+									'class'  =>'form-control input-sm',
+									'value'  => $this->Session->read('fil_documento'),
+									'size'   => 10
 								))?>
 						</div>
 					</div>			
@@ -37,16 +38,18 @@
 							<?php echo $this->Form->input('Cliente.apellido', array(
 									'label' => __('Apellido '),
 									'placeholder' => __('Apellido'),
-									'class'=>'form-control input-sm',
-									'size'=>30
+									'class' =>' form-control input-sm',
+									'value' => $this->Session->read('fil_apellido'),
+									'size'  => 30
 								))?>
 						</div>
 						 <div class="col-lg-4">
 							<?php echo $this->Form->input('Cliente.nombre', array(
 									'label' => __('Nombre '),
 									'placeholder' => __('Nombre'),
-									'class'=>'form-control input-sm',
-									'size'=>30
+									'class' => 'form-control input-sm',
+									'value' => $this->Session->read('fil_nombre'),
+									'size'  => 30
 								))?>
 						</div>
 						

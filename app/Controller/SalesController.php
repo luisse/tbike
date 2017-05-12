@@ -6,7 +6,7 @@ class SalesController extends AppController {
 	var $uses=array('Sale','Salesdetail','Numeradore','Subtypeproduct','Typeproduct','Categoria','Cliente','Product','Movimiento','Cuenta','Sysconfig');
 
 	function index(){
-		$this->set('title_for_layout','Listado de Ventas');
+		$this->set('title_for_layout', __('Listado de Ventas'));
 		$str_tipofactura = array(''=>'Todo','V'=>'Venta','P'=>'Presupuesto');
 		$this->set('str_tipofactura',$str_tipofactura);
 	}
@@ -243,16 +243,6 @@ class SalesController extends AppController {
     }
 
 	public function beforeRender(){
-		/**try{
-			$result =	$this->Acl->check(array(
-					'model' => 'Group',       # The name of the Model to check agains
-					'foreign_key' => $this->Session->read('tipousr') # The foreign key the Model is bind to
-			), ucfirst($this->params['controller']).'/'.$this->params['action']);
-			//SI NO TIENE PERMISOS DA ERROR!!!!!!
-			if(!$result)
-				$this->redirect(array('controller' => 'accesorapidos','action'=>'seguridaderror',ucfirst($this->params['controller']).'-'.$this->params['action']));
-		}catch(Exeption $e){
-		}***/
 
 		if($this->params['action'] == 'newsale' ||
 			$this->params['action'] == 'edit' ||

@@ -85,12 +85,14 @@
 					<div class='row'>
 						<div class="col-xs-6 col-md-6">
 							<a href="#" class="thumbnail">
-                <?php if(!empty($cliente['Cliente']['foto'])):?>
+                						<?php if(!empty($cliente['Cliente']['foto'])):?>
 								<?= $this->Html->image($cliente['Cliente']['foto'],
 											array ( 'title' =>$cliente['Cliente']['apellido']));
 								?>
-                <?php endif;?>
-              </a>
+								<?php else: ?>
+                                                                	<?= $this->Html->image('no_user.jpeg') ?>
+						                <?php endif;?>
+					              </a>
 						</div>
 					</div>
 				</div>

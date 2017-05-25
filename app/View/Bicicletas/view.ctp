@@ -48,7 +48,11 @@
 				</div>
 				<div class="col-lg-5">
 						<a href="#" class="thumbnail">
+								<?php if(empty($bicicleta['Bicicleta']['imagen'])): ?>
+								<?= $this->Html->image(!empty($bicicleta['Bicicleta']['imagen']) ? $bicicleta['Bicicleta']['imagen'] : 'no_bike.jpeg') ?>
+								<?php else: ?>
 								<img  src="<?php echo $bicicleta['Bicicleta']['imagen']; ?> "/>
+								<?php endif; ?>
 						</a>
 				</div>
 			</div>

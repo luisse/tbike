@@ -335,7 +335,7 @@ class UsersController extends AppController{
 	/*
 	 * Funcion: permite realizar el proceso de login mediante ajax
 	 * */
-	function userajaxloginremote($user = null,$passowrd = null){
+/*	function userajaxloginremote($user = null,$passowrd = null){
 		$this->layout = '';
 		$users = $this->User->find('first',array('username'=>$user,
 				'password'=>AuthComponent::password($passowrd)));
@@ -357,7 +357,85 @@ class UsersController extends AppController{
 			$error =__('AUTH: El usuario o contraseña son incorrectos',true);
 		}
 		$this->set('error',$error);
+	}*/
+
+	/*
+	 * Funcion: permite realizar el proceso de login mediante
+	 * */
+	function userajaxloginremote(){
+		$this->layout = '';
+		$user_id = '';
+		$error = ''; //not error
+		$error_code='';
+		$keyremote='';
+		$fbtoken='';
+		//if($securedata == $Publickey){
+			if(!empty($this->request->data['user']) && 
+				!empty($this->request->data['password'])){
+				$users = $this->User->find('first',array('conditions'=>
+						array('OR'=>array("Upper(User.username) = Upper('".$this->request->data['user']."')",'lower(User.email)'=>strtolower($this->request->data['user'])),
+						'User.password'=>AuthComponent::password($this->request->data['password']))));
+				//RECUPERAMOS EL IDENTIFICADOR DE TELEFONO EN CASO DE EXISTIR
+				$data['phone_id']	= '';
+				//if(!empty($this->request->data['phone_id']))
+				$data['phone_id']		= !empty($this->request->data['phone_id']) ? $this->request->data['phone_id'] : '';
+
+				if(!empty($users)){
+						$user_id = $users['User']['id'];
+						$keys=$this->Rsesion->find('first',array('conditions'=>array('Rsesion.user_id'=>$users['User']['id'],
+													'Rsesion.state'=>1)));
+
+						
+
+						if(empty($keys)){
+							$keyremote					= Security::generateAuthKey();
+							$data['ipconnect']	= $this->request->clientIp();
+							$data['sessionkey']	= $keyremote;
+							$data['user_id']		= $users['User']['id'];
+							if(!$this->Rsesion->AddSession($data)){
+								$keyremote = '';
+								$error=__('Error al registrar sesion remota');
+							}
+						}else{
+
+							//$keyremote = $this->gennewtoken($keys['Rsesion']['sessionkey']);
+							$data['id'] = $keys['Rsesion']['id'];
+							$this->Rsesion->AddSession($data);
+							$keyremote=$keys['Rsesion']['sessionkey'];
+							//No permitir multiples sesiones desde el exterior
+							if(!empty($data['phone_id']) &&  ( $users['User']['group_id'] == 1 || $users['User']['group_id'] == 2)){
+									$keyremote = '';
+									$user_id='';
+									$error = __('El usuario posee una sesión activa. Ingrese al sitio web para cerrar la sesión');
+							}
+						}
+						//$fbtoken = $this->gennewtoken($users['User']['id']);
+
+						if($users['User']['state'] == 2){
+							$keyremote='';
+							$fbtoken = '';
+							$error_code = 'SUBSCRIPCION_INCOMPLETA';
+							$error = __('Su dirección de email aun no fue verificada.',true);
+						}else{
+							if($users['User']['state'] <> 1){
+								$error = __('Usuario bloqueado para operar. Contacte con Taxiar',true);
+							}
+						}
+					}else{
+						$error =__('El usuario o contraseña son incorrectos',true);
+					}
+			}else{
+				$error=__('Usuario u Contraseña invalidos');
+			}
+		//}else{
+		//	$error= __('Request Insecure');
+		//}
+		$this->set('error',$error);
+		$this->set('user_id',$user_id);
+		$this->set('keyremote',$keyremote);
+		$this->set('fbtoken',$fbtoken);
 	}
+
 	/*
 	 * Funcion: un usuario profesor puede dar de alta usuarios alumnos
 	 * */

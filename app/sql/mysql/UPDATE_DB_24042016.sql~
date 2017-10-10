@@ -1,2 +1,0 @@
-ALTER TABLE taxowners ADD COLUMN type character(1);
-COMMENT ON COLUMN taxowners.type IS 'Type of owner driver: d user:u';

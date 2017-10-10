@@ -22,11 +22,11 @@ class AccesorapidosController extends AppController{
 	var $components=array('RequestHandler','Paginator');
 	var $uses=array('Accesorapido','Cliente','Bicicletareparamo','Mensaje','Buttonuser');
 
-	public $helpers = array(
+	/**public $helpers = array(
 		'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
 		'Form' => array('className' => 'BoostCake.BoostCakeForm'),
 		'Paginator' => array('className' => 'BoostCake.BoostCakePaginator'),
-	);
+	);***/
 	
 	function index(){
 		$tallercito = $this->Session->read('tallercito');

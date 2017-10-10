@@ -205,7 +205,7 @@ class UsersController extends AppController{
                 //$this->Acl->allow($group,'controllers');
                 //Clientes
                 $group->id=1;
-
+				
 				$this->Acl->allow($group,'controllers/Alquileres/index');
 				$this->Acl->allow($group,'controllers/Alquileres/index');
 				$this->Acl->allow($group,'controllers/Alquileres/add');
@@ -219,6 +219,9 @@ class UsersController extends AppController{
 				$this->Acl->allow($group,'controllers/Alquileres/marcarentregado');
 				$this->Acl->allow($group,'controllers/Alquileres/marcarpagado');
 				$this->Acl->allow($group,'controller/Bicicletasparaalquileres/seleccionarbicicleta');
+				$this->Acl->allow($group,'controller/Bicicletasparaalquileres/bicicletasparaalquilerl');
+				$this->Acl->allow($group,'controller/Bicicletasparaalquileres/bicicletasparaalquilere');
+				
                 exit;
     }
 

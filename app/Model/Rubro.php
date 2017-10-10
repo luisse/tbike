@@ -27,8 +27,8 @@ class Rubro extends AppModel {
 			),
 		),
 		'descripcion' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar la descripcion',
 				'allowEmpty' => true,
 				'last' => true 
@@ -38,8 +38,8 @@ class Rubro extends AppModel {
 						'message'=>'Ya Existe el Rubro con la descripción Especificada')
 		),
 		'sintetico' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar el sintetico'
 			),
 		),
@@ -50,8 +50,8 @@ class Rubro extends AppModel {
 			),
 		),
 		'negocios_id' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar el Negocio'
 			),
 		),

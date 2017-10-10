@@ -30,12 +30,6 @@ class Bicicleta extends AppModel {
 				'message' => 'Debe Ingresar el modelo'
 			)
 		),
-		/***'nrocuadro' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Debe Ingresar el Nro de Cuadro'
-			),
-		),***/
 		'imagen' => array(
 				'extension' => array(
 					'rule' => array('extension',array('jpg','png','jpeg')),

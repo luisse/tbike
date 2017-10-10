@@ -13,20 +13,20 @@ class Help extends AppModel {
  */
 	public $validate = array(
 		'controller' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar el Nombre del Controlador'
 			),
 		),
 		'action' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar la acción'
 			),
 		),
 		'helpdetail' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+			'notBlank' => array(
+				'rule' => array('notBlank'),
 				'message' => 'Debe Ingresar el detalle'
 			),
 		),

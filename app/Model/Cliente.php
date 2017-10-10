@@ -112,7 +112,7 @@ class Cliente extends AppModel {
 					$file_normal = '-'.$data['Cliente']['tallercito_id'].'ncliente';
 			}
 			/*imagen tamanio normal*/
-			list($fileData,$file_npath) = $cimage->ImagenToBlob($this->data['Cliente']['foto']['tmp_name'],0,0,$file_normal,'clientes/');
+			list($fileData,$file_npath) = $cimage->ImagenToBlob( $this->data['Cliente']['foto']['tmp_name'], 0, 0, $file_normal, 'clientes/');
 			$this->data['Cliente']['foto'] = $file_npath;
 			return true;
 	}
@@ -123,14 +123,14 @@ class Cliente extends AppModel {
 	function beforeSave($options=array())
 	{
 		if(!empty($this->data['Cliente']['fechanac']))
-			$this->data['Cliente']['fechanac'] = $this->formatDate($this->data['Cliente']['fechanac']);
+			$this->data['Cliente']['fechanac'] = $this->formatDate( $this->data['Cliente']['fechanac']);
 		return true;
 	}
 
 	function beforeValidate($options=array())
 	{
 		if(!empty($this->data['Cliente']['fechanac']))
-			$this->data['Cliente']['fechanac'] = $this->formatDate($this->data['Cliente']['fechanac']);
+			$this->data['Cliente']['fechanac'] = $this->formatDate( $this->data['Cliente']['fechanac']);
 		return true;
 	}
 

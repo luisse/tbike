@@ -303,6 +303,7 @@ sh lib/Cake/Console/cake acl create aco Buttonusers view
 sh lib/Cake/Console/cake acl create aco Buttonusers add
 sh lib/Cake/Console/cake acl create aco Buttonusers edit
 sh lib/Cake/Console/cake acl create aco Buttonusers delete
+
 /*Helps*/
 sh lib/Cake/Console/cake acl create aco controllers Helps
 sh lib/Cake/Console/cake acl create aco Helps index
@@ -310,6 +311,7 @@ sh lib/Cake/Console/cake acl create aco Helps view
 sh lib/Cake/Console/cake acl create aco Helps add
 sh lib/Cake/Console/cake acl create aco Helps edit
 sh lib/Cake/Console/cake acl create aco Helps delete
+
 /*Saleddetails*/
 sh lib/Cake/Console/cake acl create aco controllers Salesdetails
 sh lib/Cake/Console/cake acl create aco Salesdetails index
@@ -317,15 +319,19 @@ sh lib/Cake/Console/cake acl create aco Salesdetails view
 sh lib/Cake/Console/cake acl create aco Salesdetails add
 sh lib/Cake/Console/cake acl create aco Salesdetails edit
 sh lib/Cake/Console/cake acl create aco Salesdetails Eliminarproducto
+
 /*Bicicletasparaalquileres*/
 sh lib/Cake/Console/cake acl create aco controllers Bicicletasparaalquileres
 sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres seleccionarbicicleta
+sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres bicicletasparaalquilerl
 sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres index
 sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres view
 sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres add
 sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres edit
 sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres Eliminarproducto
 sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres delete
+sh lib/Cake/Console/cake acl create aco Bicicletasparaalquileres bicicletasparaalquilere
+
 
 
 /*Alquileres*/

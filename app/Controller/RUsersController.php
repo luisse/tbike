@@ -18,10 +18,9 @@ class RUsersController extends AppController{
     $error_code='';
     $keyremote='';
     $fbtoken='';
-    //if($securedata == $Publickey){
       if(!empty($this->request->data['user']) &&
         !empty($this->request->data['password'])){
-        $users = $this->User->find('first',array('conditions'=>
+          $users = $this->User->find('first',array('conditions'=>
             array('OR'=>array("Upper(User.username) = Upper('".$this->request->data['user']."')",'lower(User.email)'=>strtolower($this->request->data['user'])),
             'User.password'=>AuthComponent::password($this->request->data['password']))));
             //if(!empty($this->request->data['phone_id']))
@@ -48,7 +47,7 @@ class RUsersController extends AppController{
               //$keyremote = $this->gennewtoken($keys['Rsesion']['sessionkey']);
               $data['id'] = $keys['Rsesion']['id'];
               $this->Rsesion->AddSession($data);
-              $keyremote=$keys['Rsesion']['sessionkey'];
+              $keyremote = $keys['Rsesion']['sessionkey'];
               //No permitir multiples sesiones desde el exterior
               if(!empty($data['phone_id']) &&  ( $users['User']['group_id'] == 1 || $users['User']['group_id'] == 2)){
                   $keyremote = '';
@@ -74,9 +73,6 @@ class RUsersController extends AppController{
       }else{
         $error=__('Usuario u Contraseña invalidos');
       }
-    //}else{
-    //	$error= __('Request Insecure');
-    //}
     $this->set('error',$error);
     $this->set('user_id',$user_id);
     $this->set('keyremote',$keyremote);
@@ -84,7 +80,7 @@ class RUsersController extends AppController{
   }
 
   function view($id){
-    
+   
 
   }
 
@@ -122,6 +118,9 @@ class RUsersController extends AppController{
               $Email->viewVars(array('usuarionomap' => $this->request->data['Cliente']['apellido'].', '.$this->request->data['Cliente']['nombre']));
               $Email->to($this->request->data['User']['email']);
               $usrencrypt = MD5($this->request->data['User']['username']);
+              Configure::load('appconf');
+              $url = Configure::read('url');
+      
 
               if(!empty($tallercito))
                 $Email->subject('Confirmación de Usuario');
@@ -131,7 +130,7 @@ class RUsersController extends AppController{
               if(!empty($tallercito)){
                 $server = $tallercito['Tallercito']['webpage']."/users/usersactive/";
               }else{
-                $server = "http://localhost/users/usersactive/";
+                $server = $url."/users/usersactive/";
               }
               $body = 'Hola! estas a un paso para finalizar la registración'."<br>";
               $body = $body.'Para poder acceder al sitema de gestion online de tu bicicicleta debes hacer click en el link adjunto<br>';
@@ -163,4 +162,9 @@ class RUsersController extends AppController{
            throw new BadRequestException('Invalid data for add client');
     }
   }
+
+  public function cart(){
+
+  }
+
 }

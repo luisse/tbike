@@ -100,7 +100,7 @@ class BicicletareparamorepuestosController extends AppController {
 			$error = 'No existe el registro a eliminar';
 			//throw new NotFoundException(__('Invalid bicicletareparamorepuesto'));
 		}
-		//$this->request->onlyAllow('post', 'delete');
+
 		if ($this->Bicicletareparamorepuesto->delete()) {
 			$error = '';
 		} else {

@@ -75,25 +75,25 @@ class AppController extends Controller {
             $this->privatetoken($this->request->data['key']);
         }
 
-    $array_allow=array('userajaxlogin','usersactive','remoteajax','userajaxloginremote','detalletaller','display','sendmsg',
+    $array_allow = array('userajaxlogin','usersactive','remoteajax','userajaxloginremote','detalletaller','display','sendmsg',
             'confirmarusuario','usersactive','login','detalletaller');
 	  $this->Auth->allow($array_allow);
 
-    $array_json=array('userajaxlogin','addclientajax');
-    if(in_array($this->action,$array_json))
+    $array_json = array('userajaxlogin','addclientajax');
+    if( in_array($this->action,$array_json) )
       $this->RequestHandler->ext = 'json';
 
 		//Usuario siempre debe tener una sesion para operar en el sistema
-		if(!in_array($this->action,$array_allow)){
-				if($this->Session->check('username')==false){
-					$this->redirect(array('controller'=>'users','action'=>'login'));
+		if( !in_array($this->action,$array_allow) ){
+				if($this->Session->check('username') == false){
+					$this->redirect(array('controller' => 'users','action' => 'login'));
 					$this->Session->setFlash(__('La direccion requerida requiere de login'));
 				}
 		}
 	}
 
   public function publictoken($token = null){
-      $this->error_public_token='';
+      $this->error_public_token = '';
       if(!empty($token)){
         Configure::load('appconf');
         $securedata = Configure::read('securedata');
@@ -105,9 +105,9 @@ class AppController extends Controller {
     }
 
     public function privatetoken($token = null){
-      $this->error_private_token='';
-      $this->rsesion='';
-      $this->sessiontoken='';
+      $this->error_private_token = '';
+      $this->rsesion = '';
+      $this->sessiontoken = '';
       if(!empty($token)){
         $this->sessiontoken = $token;
   		 if($this->Rsesion->SessionIsOk($token)){
@@ -149,7 +149,7 @@ class AppController extends Controller {
         				$this->action != 'detalletaller' &&
         				$this->action != 'mostrarimagen'){
             if($this->Session->check('username') == false){
-                    $this->redirect(array('controller'=>'users','action'=>'login'));
+                    $this->redirect(array('controller' => 'users','action' => 'login'));
                     $this->Session->setFlash('La direccion requerida requiere de login');
                 }
         }else{

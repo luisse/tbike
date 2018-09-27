@@ -65,8 +65,8 @@ class BicicletareparamosController extends AppController {
 		}
 
 		if(!empty($this->request->data)){
-			if($this->request->data['Cliente']['documento']!= null &&
-					$this->request->data['Cliente']['documento']!= '')
+			if($this->request->data['Cliente']['documento'] != null &&
+					$this->request->data['Cliente']['documento'] != '')
 					$ls_filtro = $ls_filtro.' AND Cliente.documento = '.str_replace('.', '', $this->request->data['Cliente']['documento']);
 			if($this->request->data['Cliente']['nombre']!= null &&
 					$this->request->data['Cliente']['nombre']!= '')

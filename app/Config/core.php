@@ -497,11 +497,11 @@ Configure::write('Hybridauth', array(
 		// openid providers
 		"Google" => array(
 				"enabled" => true,
-				"keys" => array("id" => "427770810635-4rvu23b1ps2i6dsttbv6gmvq1clrsmi3.apps.googleusercontent.com","secret" => "LB7JKLd5rr4rImuTZ4wEtJ67"),
+				"keys" => array("id" => ""),
 		),
 		"Facebook" => array(
 				"enabled" => true,
-				"keys" => array("id" => "124676491269993", "secret" => "48f87473a74d57d07394f1af64492563"),
+				"keys" => array("id" => "", "secret" => ""),
 		),
 ));
 

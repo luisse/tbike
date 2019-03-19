@@ -116,7 +116,7 @@ class EmailConfig {
 			                'port' => 465,
 			                'timeout' => 30,
 			                'username' => 'gestiondocumental.proime@gmail.com',
-			                'password' => '2468Gestion',
+			                'password' => '',
 			                'client' => null,
 			                'log' => false
 			        );

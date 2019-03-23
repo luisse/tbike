@@ -2,18 +2,18 @@
 /**
  * ModelIntegrationTest file
  *
- * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.Model
  * @since         CakePHP(tm) v 1.2.0.4206
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 require_once dirname(__FILE__) . DS . 'ModelTestBase.php';
@@ -1334,7 +1334,7 @@ class ModelIntegrationTest extends BaseModelTest {
 		$Article->useTable = false;
 		$Article->id = 1;
 		$result = $Article->exists();
-		$this->assertTrue($result);
+		$this->assertFalse($result);
 	}
 
 /**
@@ -1617,10 +1617,12 @@ class ModelIntegrationTest extends BaseModelTest {
 	public function testAutoConstructPluginAssociations() {
 		$Comment = ClassRegistry::init('TestPluginComment');
 
-		$this->assertEquals(2, count($Comment->belongsTo), 'Too many associations');
+		$this->assertEquals(3, count($Comment->belongsTo), 'Too many associations');
 		$this->assertFalse(isset($Comment->belongsTo['TestPlugin.User']));
+		$this->assertFalse(isset($Comment->belongsTo['TestPlugin.Source']));
 		$this->assertTrue(isset($Comment->belongsTo['User']), 'Missing association');
 		$this->assertTrue(isset($Comment->belongsTo['TestPluginArticle']), 'Missing association');
+		$this->assertTrue(isset($Comment->belongsTo['Source']), 'Missing association');
 	}
 
 /**
@@ -1994,7 +1996,7 @@ class ModelIntegrationTest extends BaseModelTest {
 					'afterFind' => 'Successfully added by AfterFind'
 				)
 			));
-		$this->assertEquals(self::date(), $result['Something']['updated']);
+		$this->assertEquals(static::date(), $result['Something']['updated']);
 		unset($result['Something']['updated']);
 		$this->assertEquals($expected, $result);
 	}

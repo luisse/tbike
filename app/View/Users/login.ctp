@@ -7,7 +7,8 @@
                     </div>
                     <div class="panel-body">
 							<?php
-							echo $this->Form->create("User",array('action'=>'login'));
+							//echo $this->Form->create("User",array('action'=>'login'));
+							echo $this->Form->create('User',array('url'=>array('controller'=>'users','action'=>'login')));
 							?>
                             <fieldset>
                                 <div class="form-group">

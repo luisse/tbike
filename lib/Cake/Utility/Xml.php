@@ -4,18 +4,18 @@
  *
  * The methods in these classes enable the datasources that use XML to work.
  *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @package       Cake.Utility
  * @since         CakePHP v .0.10.3.1400
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('HttpSocket', 'Network/Http');
@@ -80,7 +80,9 @@ class Xml {
  * - `readFile` Set to false to disable file reading. This is important to disable when
  *   putting user data into Xml::build(). If enabled local & remote files will be read if they exist.
  *   Defaults to true for backwards compatibility reasons.
- * - If using array as input, you can pass `options` from Xml::fromArray.
+ * - `parseHuge` Enable the `LIBXML_PARSEHUGE`
+ *
+ * If using array as input, you can pass `options` from Xml::fromArray.
  *
  * @param string|array $input XML string, a path to a file, a URL or an array
  * @param array $options The options to use
@@ -94,16 +96,17 @@ class Xml {
 		$defaults = array(
 			'return' => 'simplexml',
 			'loadEntities' => false,
-			'readFile' => true
+			'readFile' => true,
+			'parseHuge' => true
 		);
 		$options += $defaults;
 
 		if (is_array($input) || is_object($input)) {
-			return self::fromArray((array)$input, $options);
+			return static::fromArray((array)$input, $options);
 		} elseif (strpos($input, '<') !== false) {
-			return self::_loadXml($input, $options);
+			return static::_loadXml($input, $options);
 		} elseif ($options['readFile'] && file_exists($input)) {
-			return self::_loadXml(file_get_contents($input), $options);
+			return static::_loadXml(file_get_contents($input), $options);
 		} elseif ($options['readFile'] && strpos($input, 'http://') === 0 || strpos($input, 'https://') === 0) {
 			try {
 				$socket = new HttpSocket(array('request' => array('redirect' => 10)));
@@ -111,7 +114,7 @@ class Xml {
 				if (!$response->isOk()) {
 					throw new XmlException(__d('cake_dev', 'XML cannot be read.'));
 				}
-				return self::_loadXml($response->body, $options);
+				return static::_loadXml($response->body, $options);
 			} catch (SocketException $e) {
 				throw new XmlException(__d('cake_dev', 'XML cannot be read.'));
 			}
@@ -134,6 +137,10 @@ class Xml {
 		$internalErrors = libxml_use_internal_errors(true);
 		if ($hasDisable && !$options['loadEntities']) {
 			libxml_disable_entity_loader(true);
+		}
+		$flags = LIBXML_NOCDATA;
+		if (!empty($options['parseHuge'])) {
+			$flags |= LIBXML_PARSEHUGE;
 		}
 		try {
 			if ($options['return'] === 'simplexml' || $options['return'] === 'simplexmlelement') {
@@ -218,7 +225,7 @@ class Xml {
 		if ($options['pretty']) {
 			$dom->formatOutput = true;
 		}
-		self::_fromArray($dom, $dom, $input, $options['format']);
+		static::_fromArray($dom, $dom, $input, $options['format']);
 
 		$options['return'] = strtolower($options['return']);
 		if ($options['return'] === 'simplexml' || $options['return'] === 'simplexmlelement') {
@@ -282,10 +289,10 @@ class Xml {
 						foreach ($value as $item) {
 							$itemData = compact('dom', 'node', 'key', 'format');
 							$itemData['value'] = $item;
-							self::_createChild($itemData);
+							static::_createChild($itemData);
 						}
 					} else { // Struct
-						self::_createChild(compact('dom', 'node', 'key', 'value', 'format'));
+						static::_createChild(compact('dom', 'node', 'key', 'value', 'format'));
 					}
 				}
 			} else {
@@ -312,7 +319,7 @@ class Xml {
 				$childNS = $value['xmlns:'];
 				unset($value['xmlns:']);
 			}
-		} elseif (!empty($value) || $value === 0) {
+		} elseif (!empty($value) || $value === 0 || $value === '0') {
 			$childValue = (string)$value;
 		}
 
@@ -324,7 +331,7 @@ class Xml {
 			$child->setAttribute('xmlns', $childNS);
 		}
 
-		self::_fromArray($dom, $child, $value, $format);
+		static::_fromArray($dom, $child, $value, $format);
 		$node->appendChild($child);
 	}
 
@@ -344,7 +351,7 @@ class Xml {
 		}
 		$result = array();
 		$namespaces = array_merge(array('' => ''), $obj->getNamespaces(true));
-		self::_toArray($obj, $result, '', array_keys($namespaces));
+		static::_toArray($obj, $result, '', array_keys($namespaces));
 		return $result;
 	}
 
@@ -369,7 +376,7 @@ class Xml {
 			}
 
 			foreach ($xml->children($namespace, true) as $child) {
-				self::_toArray($child, $data, $namespace, $namespaces);
+				static::_toArray($child, $data, $namespace, $namespaces);
 			}
 		}
 

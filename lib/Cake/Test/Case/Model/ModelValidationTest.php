@@ -2,18 +2,18 @@
 /**
  * ModelValidationTest file
  *
- * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) Tests <https://book.cakephp.org/2.0/en/development/testing.html>
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://book.cakephp.org/2.0/en/development/testing.html CakePHP(tm) Tests
  * @package       Cake.Test.Case.Model
  * @since         CakePHP(tm) v 1.2.0.4206
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 require_once dirname(__FILE__) . DS . 'ModelTestBase.php';
@@ -552,6 +552,44 @@ class ModelValidationTest extends BaseModelTest {
 		$this->assertEquals($expected, $result);
 		$result = $TestModel->validationErrors;
 		$this->assertEquals($expected, $result);
+	}
+
+/**
+ * test that validates() still performs correctly when useTable = false on the model.
+ *
+ * @return void
+ */
+	public function testValidatesWithNoTable() {
+		$TestModel = new TheVoid();
+		$TestModel->validate = array(
+			'title' => array(
+				'notEmpty' => array(
+					'rule' => array('notBlank'),
+					'required' => true,
+				),
+				'tooShort' => array(
+					'rule' => array('minLength', 10),
+				),
+			),
+		);
+		$data = array(
+			'TheVoid' => array(
+				'title' => 'too short',
+			),
+		);
+		$TestModel->create($data);
+		$result = $TestModel->validates();
+		$this->assertFalse($result);
+
+		$data = array(
+			'TheVoid' => array(
+				'id' => '1',
+				'title' => 'A good title',
+			),
+		);
+		$TestModel->create($data);
+		$result = $TestModel->validates();
+		$this->assertTrue($result);
 	}
 
 /**
@@ -1969,6 +2007,9 @@ class ModelValidationTest extends BaseModelTest {
 		$this->assertTrue(isset($Validator['other']));
 		$this->assertFalse(isset($Validator['other']['numeric']));
 		$this->assertTrue(isset($Validator['other']['between']));
+
+		$Validator->remove('other');
+		$Validator->remove('other', 'between');
 	}
 
 /**
@@ -2187,9 +2228,15 @@ class ModelValidationTest extends BaseModelTest {
  *
  * @expectedException PHPUnit_Framework_Error
  * @return void
+ * @throws PHPUnit_Framework_Error
  */
 	public function testValidatorTypehintException() {
-		new ModelValidator('asdasds');
+		try {
+			new ModelValidator('asdasds');
+			$this->fail('No exeption raised');
+		} catch (TypeError $e) {
+			throw new PHPUnit_Framework_Error('Raised an error', 100, __FILE__, __LINE__);
+		}
 	}
 
 /**

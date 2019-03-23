@@ -72,9 +72,18 @@ class UsersController extends AppController{
 		$this->layout = 'login';
 		//$this->viewBuilder()->layout('login');
 		$this->set('title_for_layout',__('Bici-Taller'));
+		$this->log('Usuario recuperado', 'debug');
+		echo 'Login validando!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!';
+		print_r($this->request->data);
 		if(!empty($this->request->data)){
+
+			
+
+			$this->log('Usuario recuperado', 'debug');
 			if ($this->Auth->login()) {
 				$user = $this->User->validateLogin($this->request->data['User']);
+
+
 				if(!empty($user) ){
 					//Guardamos los datos de usuario y configuraciones en las sesion del usuario
 					$result = $this->User->getUserDetails($user['User']['group_id'],$user['User']['id']);
@@ -112,7 +121,7 @@ class UsersController extends AppController{
 				}
 			}else{
 					$this->Session->setFlash(__('Acl: El usuario o Password son incorrectos.',true));
-					$this->redirect('login');
+					//$this->redirect('login');
 			}
 		}
 	}

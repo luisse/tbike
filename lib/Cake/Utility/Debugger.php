@@ -4,18 +4,18 @@
  *
  * Provides enhanced logging, stack traces, and rendering debug views
  *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
+ * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
  *
  * Licensed under The MIT License
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
+ * @link          https://cakephp.org CakePHP(tm) Project
  * @package       Cake.Utility
  * @since         CakePHP(tm) v 1.2.4560
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
 App::uses('CakeLog', 'Log');
@@ -27,7 +27,7 @@ App::uses('CakeText', 'Utility');
  * Debugger overrides PHP's default error handling to provide stack traces and enhanced logging
  *
  * @package       Cake.Utility
- * @link          http://book.cakephp.org/2.0/en/development/debugging.html#debugger-class
+ * @link          https://book.cakephp.org/2.0/en/development/debugging.html#debugger-class
  */
 class Debugger {
 
@@ -91,7 +91,6 @@ class Debugger {
 
 /**
  * Constructor.
- *
  */
 	public function __construct() {
 		$docRef = ini_get('docref_root');
@@ -171,10 +170,10 @@ class Debugger {
  * @param int $depth The depth to output to. Defaults to 3.
  * @return void
  * @see Debugger::exportVar()
- * @link http://book.cakephp.org/2.0/en/development/debugging.html#Debugger::dump
+ * @link https://book.cakephp.org/2.0/en/development/debugging.html#Debugger::dump
  */
 	public static function dump($var, $depth = 3) {
-		pr(self::exportVar($var, $depth));
+		pr(static::exportVar($var, $depth));
 	}
 
 /**
@@ -182,14 +181,16 @@ class Debugger {
  * as well as export the variable using exportVar. By default the log is written to the debug log.
  *
  * @param mixed $var Variable or content to log
- * @param int $level type of log to use. Defaults to LOG_DEBUG
+ * @param int|string $level Type of log to use. Defaults to LOG_DEBUG. When value is an integer
+ *    or a string matching the recognized levels, then it will
+ *    be treated as a log level. Otherwise it's treated as a scope.
  * @param int $depth The depth to output to. Defaults to 3.
  * @return void
- * @link http://book.cakephp.org/2.0/en/development/debugging.html#Debugger::log
+ * @link https://book.cakephp.org/2.0/en/development/debugging.html#Debugger::log
  */
 	public static function log($var, $level = LOG_DEBUG, $depth = 3) {
-		$source = self::trace(array('start' => 1)) . "\n";
-		CakeLog::write($level, "\n" . $source . self::exportVar($var, $depth));
+		$source = static::trace(array('start' => 1)) . "\n";
+		CakeLog::write($level, "\n" . $source . static::exportVar($var, $depth));
 	}
 
 /**
@@ -200,7 +201,7 @@ class Debugger {
  * @param string $file File on which error occurred
  * @param int $line Line that triggered the error
  * @param array $context Context
- * @return bool true if error was handled
+ * @return bool|null True if error was handled, otherwise null.
  * @deprecated 3.0.0 Will be removed in 3.0. This function is superseded by Debugger::outputError().
  */
 	public static function showError($code, $description, $file = null, $line = null, $context = null) {
@@ -217,7 +218,7 @@ class Debugger {
 		if (!in_array($info, $self->errors)) {
 			$self->errors[] = $info;
 		} else {
-			return;
+			return null;
 		}
 
 		switch ($code) {
@@ -247,11 +248,11 @@ class Debugger {
 				$level = LOG_NOTICE;
 				break;
 			default:
-				return;
+				return null;
 		}
 
 		$data = compact(
-			'level', 'error', 'code', 'description', 'file', 'path', 'line', 'context'
+			'level', 'error', 'code', 'description', 'file', 'line', 'context'
 		);
 		echo $self->outputError($data);
 
@@ -275,7 +276,7 @@ class Debugger {
  *
  * @param array $options Format for outputting stack trace
  * @return mixed Formatted stack trace
- * @link http://book.cakephp.org/2.0/en/development/debugging.html#Debugger::trace
+ * @link https://book.cakephp.org/2.0/en/development/debugging.html#Debugger::trace
  */
 	public static function trace($options = array()) {
 		$self = Debugger::getInstance();
@@ -334,7 +335,7 @@ class Debugger {
 				} else {
 					$tpl = $self->_templates['base']['traceLine'];
 				}
-				$trace['path'] = self::trimPath($trace['file']);
+				$trace['path'] = static::trimPath($trace['file']);
 				$trace['reference'] = $reference;
 				unset($trace['object'], $trace['args']);
 				$back[] = CakeText::insert($tpl, $trace, array('before' => '{:', 'after' => '}'));
@@ -387,7 +388,7 @@ class Debugger {
  * @param int $context Number of lines of context to extract above and below $line
  * @return array Set of lines highlighted
  * @see http://php.net/highlight_string
- * @link http://book.cakephp.org/2.0/en/development/debugging.html#Debugger::excerpt
+ * @link https://book.cakephp.org/2.0/en/development/debugging.html#Debugger::excerpt
  */
 	public static function excerpt($file, $line, $context = 2) {
 		$lines = array();
@@ -408,7 +409,7 @@ class Debugger {
 			if (!isset($data[$i])) {
 				continue;
 			}
-			$string = str_replace(array("\r\n", "\n"), "", self::_highlight($data[$i]));
+			$string = str_replace(array("\r\n", "\n"), "", static::_highlight($data[$i]));
 			if ($i == $line) {
 				$lines[] = '<span class="code-highlight">' . $string . '</span>';
 			} else {
@@ -456,8 +457,6 @@ class Debugger {
  *  - host
  *  - database
  *  - port
- *  - prefix
- *  - schema
  *
  * This is done to protect database credentials, which could be accidentally
  * shown in an error message if CakePHP is deployed in development mode.
@@ -465,10 +464,10 @@ class Debugger {
  * @param string $var Variable to convert
  * @param int $depth The depth to output to. Defaults to 3.
  * @return string Variable as a formatted string
- * @link http://book.cakephp.org/2.0/en/development/debugging.html#Debugger::exportVar
+ * @link https://book.cakephp.org/2.0/en/development/debugging.html#Debugger::exportVar
  */
 	public static function exportVar($var, $depth = 3) {
-		return self::_export($var, $depth, 0);
+		return static::_export($var, $depth, 0);
 	}
 
 /**
@@ -480,7 +479,7 @@ class Debugger {
  * @return string The dumped variable.
  */
 	protected static function _export($var, $depth, $indent) {
-		switch (self::getType($var)) {
+		switch (static::getType($var)) {
 			case 'boolean':
 				return ($var) ? 'true' : 'false';
 			case 'integer':
@@ -493,7 +492,7 @@ class Debugger {
 				}
 				return "'" . $var . "'";
 			case 'array':
-				return self::_array($var, $depth - 1, $indent + 1);
+				return static::_array($var, $depth - 1, $indent + 1);
 			case 'resource':
 				return strtolower(gettype($var));
 			case 'null':
@@ -501,7 +500,7 @@ class Debugger {
 			case 'unknown':
 				return 'unknown';
 			default:
-				return self::_object($var, $depth - 1, $indent + 1);
+				return static::_object($var, $depth - 1, $indent + 1);
 		}
 	}
 
@@ -515,8 +514,6 @@ class Debugger {
  * - host
  * - database
  * - port
- * - prefix
- * - schema
  *
  * @param array $var The array to export.
  * @param int $depth The current depth, used for recursion tracking.
@@ -529,9 +526,7 @@ class Debugger {
 			'login' => '*****',
 			'host' => '*****',
 			'database' => '*****',
-			'port' => '*****',
-			'prefix' => '*****',
-			'schema' => '*****'
+			'port' => '*****'
 		);
 		$replace = array_intersect_key($secrets, $var);
 		$var = $replace + $var;
@@ -550,9 +545,9 @@ class Debugger {
 				if ($key === 'GLOBALS' && is_array($val) && isset($val['GLOBALS'])) {
 					$val = '[recursion]';
 				} elseif ($val !== $var) {
-					$val = self::_export($val, $depth, $indent);
+					$val = static::_export($val, $depth, $indent);
 				}
-				$vars[] = $break . self::exportVar($key) .
+				$vars[] = $break . static::exportVar($key) .
 					' => ' .
 					$val;
 			}
@@ -583,7 +578,7 @@ class Debugger {
 			$break = "\n" . str_repeat("\t", $indent);
 			$objectVars = get_object_vars($var);
 			foreach ($objectVars as $key => $value) {
-				$value = self::_export($value, $depth - 1, $indent);
+				$value = static::_export($value, $depth - 1, $indent);
 				$props[] = "$key => " . $value;
 			}
 
@@ -600,7 +595,7 @@ class Debugger {
 						$reflectionProperty->setAccessible(true);
 						$property = $reflectionProperty->getValue($var);
 
-						$value = self::_export($property, $depth - 1, $indent);
+						$value = static::_export($property, $depth - 1, $indent);
 						$key = $reflectionProperty->name;
 						$props[] = sprintf('[%s] %s => %s', $visibility, $key, $value);
 					}
@@ -781,6 +776,7 @@ class Debugger {
 
 		if (!empty($tpl['escapeContext'])) {
 			$context = h($context);
+			$data['description'] = h($data['description']);
 		}
 
 		$infoData = compact('code', 'context', 'trace');
@@ -843,11 +839,11 @@ class Debugger {
  */
 	public static function checkSecurityKeys() {
 		if (Configure::read('Security.salt') === 'DYhG93b0qyJfIxfs2guVoUubWwvniR2G0FgaC9mi') {
-			trigger_error(__d('cake_dev', 'Please change the value of %s in %s to a salt value specific to your application.', '\'Security.salt\'', 'APP/Config/core.php'), E_USER_NOTICE);
+			trigger_error(__d('cake_dev', 'Please change the value of %s in %s to a salt value specific to your application.', '\'Security.salt\'', CONFIG . 'core.php'), E_USER_NOTICE);
 		}
 
 		if (Configure::read('Security.cipherSeed') === '76859309657453542496749683645') {
-			trigger_error(__d('cake_dev', 'Please change the value of %s in %s to a numeric (digits only) seed value specific to your application.', '\'Security.cipherSeed\'', 'APP/Config/core.php'), E_USER_NOTICE);
+			trigger_error(__d('cake_dev', 'Please change the value of %s in %s to a numeric (digits only) seed value specific to your application.', '\'Security.cipherSeed\'', CONFIG . 'core.php'), E_USER_NOTICE);
 		}
 	}
 

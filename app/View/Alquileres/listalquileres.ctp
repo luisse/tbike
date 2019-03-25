@@ -1,7 +1,7 @@
 <?php if(!empty($alquileres)){?>
 <?php
-$str_estadossino[0]='NO';
-$str_estadossino[1]='SI';
+	$str_estadossino[0]='NO';
+	$str_estadossino[1]='SI';
 ?>
 
 	<div class="table-responsive">
@@ -128,7 +128,7 @@ $str_estadossino[1]='SI';
 			<td colspan="7" class='row1'>
 				<center>
 				<div class="pagination">
-						<?= $paginador = $this->paginator->numbers();?>
+						<?php $paginador = $this->paginator->numbers();?>
 							<?php if(!empty($paginador)): ?>
 							<center>
 								<ul class="pagination">

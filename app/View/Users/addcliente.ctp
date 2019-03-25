@@ -1,7 +1,6 @@
 <?php echo $this->Html->script(array('/js/users/addcliente.js','jquery.maskedinput','bootstrap-datetimepicker','fmensajes.js','fgenerales.js','jquery.numeric'),array('block'=>'scriptjs'));		?>
 <?php echo $this->Html->css('bootstrap-datetimepicker', null, array('inline' => false))?>
-
-<?php echo $this->Form->create('User',array('action'=>'addcliente',
+<?php echo $this->Form->create('User',array('url'=>array('action'=>'addcliente'),
 		'inputDefaults' => array(
 							'div' => 'form-group',
 							'wrapInput' => false,

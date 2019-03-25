@@ -13,7 +13,8 @@ $str_estadosusers[2]='Creado no aceptado';
 </ul>
 <div class="tab-content">
 <div class="tab-pane  active" id="tabs-3">
-	<?php echo $this->Form->create('User',array('action'=>'edit',
+	
+	<?php echo $this->Form->create('User',array('url'=>array('action'=>'edit'),
 			'inputDefaults' => array(
 							'div' => 'form-group',
 							'wrapInput' => false,
@@ -175,7 +176,8 @@ $str_estadosusers[2]='Creado no aceptado';
 	<?php echo $this->Form->end();?>
 </div>
 <div id="tabs-2" class="tab-pane">
-	<?php echo $this->Form->create('Cliente',array('action'=>'editimage',
+
+	<?php echo $this->Form->create('Cliente',array('url'=>array('action'=>'editimage'),
 						'type'=>'file',
 						'inputDefaults' => array(
 										'div' => 'form-group',
@@ -221,7 +223,8 @@ $str_estadosusers[2]='Creado no aceptado';
 	<?php echo $this->Form->end();?>
 </div>
 <div id="tabs-1" class="tab-pane">
-	<?php echo $this->Form->create('User',array('action'=>'cambiarcontrasenia',
+	
+	<?php echo $this->Form->create('User',array('url'=>array('action'=>'cambiarcontrasenia'),
 						'inputDefaults' => array(
 										'div' => 'form-group',
 										'wrapInput' => false,

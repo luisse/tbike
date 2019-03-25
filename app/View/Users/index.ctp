@@ -18,11 +18,13 @@
 			<div class="tab-content">
 			  <div class="tab-pane active" id="tabs-1">
 					<!-- <form id="filteralumno" accept-charset="utf-8" method="post" action="#">  -->
-					<?php echo $this->Form->create('User',array('action'=>'#','id'=>'filteruser'));?>
+						
+					<!-- <?php echo $this->Form->create('User',array('action'=>'#','id'=>'filteruser'));?> -->
+					<?php echo $this->Form->create('User',array('url'=>array('action'=>'#'),'id'=>'filteruser'));?>
 					<?php echo $this->Form->input('typeuser',array('type'=>'hidden','value'=>'1')); ?>    
 				<fieldset>
 					<div class="row">	
-						<div class="col-lg-3">			
+						<div class="col-lg-3">
 							<?php echo $this->Form->input('Cliente.documento', array(
 									'label' => __('Documento '),
 									'type'  =>'text',

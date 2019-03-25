@@ -1,7 +1,8 @@
 <?php echo $this->Html->script(array('http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js','/js/bicicletasparaalquileres/edit.js','fmensajes.js','fgenerales.js','jquery.toastmessage','yellow-text'),array('block'=>'scriptjs')); ?>
 <?php echo $this->Html->css(array('message','yellow-text-blue'), null, array('inline' => false))?>
 <?php echo $this->element('flash_message')?>
-<?php echo $this->Form->create('Bicicletasparaalquilere',array('action'=>'edit',
+
+<?php echo $this->Form->create('Bicicletasparaalquilere',array('url'=>array('controller'=>'Bicicletasparaalquilere','action'=>'edit'),
 				'inputDefaults' => array(
 							'div' => 'form-group',
 							'wrapInput' => false,

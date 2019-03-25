@@ -1,7 +1,7 @@
 	<?php	echo $this->Html->script(array('movimientos/pagos.js'),array('block'=>'scriptjs'));?>
 	<div id='formreturn'>
 	<?php echo $this->element('modalboxcabecera',array('title'=>'Cobros','paneltipo'=>'panel-primary'));?>
-	<?php echo $this->Form->create('Mensajeservice',array('action'=>'add',	
+	<?php echo $this->Form->create('Mensajeservice',array('url'=>array('action'=>'add'),	
 						'inputDefaults' => array(
 							'div' => 'form-group',
 							'wrapInput' => false,

@@ -1,7 +1,7 @@
 <?= $this->Html->script(array('/js/products/add.js','fmensajes.js','fgenerales.js','jquery.toastmessage','jquery.price','fgenerales','yellow-text','jquery.maskedinput','jquery.numeric','bootstrap-typeahead.js'),array('block'=>'scriptjs')); ?>
 <?= $this->Html->css(array('message','yellow-text-blue'), null, array('inline' => false))?>			
 <?= $this->element('flash_message')?>
-<?= $this->Form->create('Product',array('action'=>'add',
+<?= $this->Form->create('Product',array('url'=>array('action'=>'add'),
 				'type'=>'file',
 				'inputDefaults' => array(
 									'div' => 'form-group',

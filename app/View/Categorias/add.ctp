@@ -1,7 +1,7 @@
 <?php echo $this->Html->script(array('/js/categorias/add.js','fgenerales.js','jquery.toastmessage'),array('block'=>'scriptjs')); ?>
 <?php echo $this->Html->css('message', null, array('inline' => false))?>			
 <?php echo $this->element('flash_message')?>
-<?php echo $this->Form->create('Categoria',array('action'=>'add',	
+<?php echo $this->Form->create('Categoria',array('url'=>array('action'=>'add'),	
 				'type'=>'file',	
 				'inputDefaults' => array(
 									'div' => 'form-group',

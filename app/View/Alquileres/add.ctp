@@ -2,7 +2,7 @@
 <?= $this->Html->css(array('message','dootstrap.docs'), null, array('inline' => false))?>
 <?= $this->element('flash_message')?>
 
-<?= $this->Form->create('Alquilere',array('action'=>'add',
+<?= $this->Form->create('Alquilere',array('url'=>array('action'=>'add'),
 				'inputDefaults' => array(
 							'div' => 'form-group',
 							'wrapInput' => false,

@@ -73,8 +73,6 @@ class UsersController extends AppController{
 		//$this->viewBuilder()->layout('login');
 		$this->set('title_for_layout',__('Bici-Taller'));
 		$this->log('Usuario recuperado', 'debug');
-		echo 'Login validando!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!';
-		print_r($this->request->data);
 		if(!empty($this->request->data)){
 
 			

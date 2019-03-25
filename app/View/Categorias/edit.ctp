@@ -2,7 +2,7 @@
 <?php echo $this->Html->css('message', null, array('inline' => false))?>			
 <?php echo $this->element('flash_message')?>
 
-<?php echo $this->Form->create('Categoria',array('action'=>'edit',	
+<?php echo $this->Form->create('Categoria',array('url'=>array('controller'=>'Categoria','action'=>'edit'),	
 				'type'=>'file',
 				'inputDefaults' => array(
 									'div' => 'form-group',

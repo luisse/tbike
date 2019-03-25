@@ -2,7 +2,8 @@
 <?php echo $this->Html->css(array('message','dootstrap.docs'), null, array('inline' => false))?>
 <?php echo $this->element('flash_message')?>
 <div id='formreturn'>
-	<?php echo $this->Form->create('Movimientos',array('action'=>'movimientosmanuales',	
+	
+	<?php echo $this->Form->create('Movimientos',array('url'=>array('controller'=>'Movimientos','action'=>'movimientosmanuales'),	
 						'inputDefaults' => array(
 							'div' => 'form-group',
 							'wrapInput' => false,

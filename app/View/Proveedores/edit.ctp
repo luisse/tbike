@@ -3,7 +3,7 @@ echo $this->Html->script(array('/js/proveedores/edit.js','fmensajes.js','fgenera
 <?php echo $this->Html->css('message', null, array('inline' => false))?>			
 <?php echo $this->element('flash_message')?>
 
-<?php echo $this->Form->create('Proveedore',array('action'=>'edit',	
+<?php echo $this->Form->create('Proveedore',array('url'=>array('action'=>'edit'),	
 				'inputDefaults' => array(
 									'div' => 'form-group',
 									'wrapInput' => false,

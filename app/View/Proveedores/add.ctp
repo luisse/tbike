@@ -2,8 +2,7 @@
 echo $this->Html->script(array('/js/proveedores/add.js','fmensajes.js','fgenerales.js','jquery.numeric','jquery.toastmessage','jquery.maskedinput'),array('block'=>'scriptjs'));		?>
 <?php echo $this->Html->css('message', null, array('inline' => false))?>			
 <?php echo $this->element('flash_message')?>
-
-<?php echo $this->Form->create('Proveedore',array('action'=>'add',	
+<?php echo $this->Form->create('Proveedore',array('url'=>array('action'=>'add'),	
 				'inputDefaults' => array(
 									'div' => 'form-group',
 									'wrapInput' => false,

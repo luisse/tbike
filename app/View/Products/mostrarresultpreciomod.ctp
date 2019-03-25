@@ -1,5 +1,6 @@
 <!-- FIN BLOQUE BOTONES -->
-<?php echo $this->Form->create('Product',array('action'=>'actualizarprecio',	
+
+<?php echo $this->Form->create('Product',array('url'=>array('action'=>'actualizarprecio'),	
 				'type'=>'file',	
 				'inputDefaults' => array(
 									'div' => 'form-group',

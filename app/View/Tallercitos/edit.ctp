@@ -1,6 +1,6 @@
 <?php			
 echo $this->Html->script(array('/js/tallercitos/edit.js','fgenerales','fmensajes.js','jquery.maskedinput','jquery.numeric'),array('block'=>'scriptjs'));?>
-<?php echo $this->Form->create('Tallercito',array('action'=>'edit',
+<?php echo $this->Form->create('Tallercito',array('url'=>array('action'=>'edit'),
 		'type'=>'file',	
 		'inputDefaults' => array(
 							'div' => 'form-group',

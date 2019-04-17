@@ -1,4 +1,4 @@
-<div class="modal fade" id="modalbox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalbox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="padding-top: 5px;padding-bottom: 5px;padding-left: 20px;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

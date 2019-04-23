@@ -96,7 +96,7 @@
 				 <div class="tab-pane active" id="tabs-1">
 					<div class="panel panel-default">
 						<div class = "row" id='btnuevobici'>
-							<div class='col-lg-3'>
+							<div class='col-lg-3' style="padding-top: 5px;padding-bottom: 5px;padding-left: 20px;">
 							<button type="button" class="btn btn-primary btn-lw" title="Nueva Bicicleta" id='agregarbicicleta'>
 								<span class="glyphicon  glyphicon-plus"></span><?= __('Nueva Bicicleta') ?>
 							</button>
@@ -153,12 +153,12 @@
 							</div>
 						</div>
 						</div>
-						<div id='biciclient'></div>
+						<div id='biciclient' style="padding-top: 5px;padding-bottom: 5px;padding-left: 10px;padding-right: 10px"></div>
 					</div>
 				</div>
 				<div id="tabs-2" class="tab-pane">
 				<div class="panel panel-default">
-						<button type="button" class="btn btn-primary btn-lw" title="Agregar Fila" id='agregarfila'>
+						<button type="button" class="btn btn-primary btn-lw" title="Agregar Fila" id='agregarfila'  style="padding-top: 5px;padding-bottom: 5px;padding-left: 10px;padding-right: 10px;margin-top: 5px;margin-left: 5px;">
 							<span class="glyphicon  glyphicon-plus"></span>
 						</button>
 						<div class="table-responsive">

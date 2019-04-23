@@ -62,7 +62,7 @@ $str_estadossino[1]='SI';
 			<td>
 				<center>
 				<?php if($bicicletareparamo['Bicicletareparamo']['entregada'] == 0): ?>
-					<?php echo $this->Form->input('estado'.$i,array('options'=>$str_estadossino,'onchange'=>'AgregarPago('.$i.')','label'=>false,'value'=>$bicicletareparamo['Bicicletareparamo']['entregada']))?>				
+					<?php echo $this->Form->input('estado'.$i,array('options'=>$str_estadossino,'onchange'=>'AgregarPago('.$i.')','label'=>false,'class'=>'form-control input-sm','value'=>$bicicletareparamo['Bicicletareparamo']['entregada']))?>				
 				<?php endif ?>
 				
 				</center>
